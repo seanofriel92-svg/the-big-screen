@@ -227,6 +227,21 @@ section.row{padding:44px 0 10px}
 .ad-infeed p{margin:0;color:#D7E0F0;font-size:13.5px;line-height:1.4}
 .top10 .ad-infeed{width:100%}
 .ad-note{font-size:13.5px;color:var(--muted)}
+/* ---------- Trichome Zone house ad (sister site, green/amber) ---------- */
+.ad-trichome{background:linear-gradient(135deg,#1B5E20,#14532D 55%,#0B3D22);border:1px dashed #F5B81D;color:#FFF8E1}
+.ad-trichome::before{background:radial-gradient(60% 120% at 12% 0%,rgba(245,184,29,.28),rgba(245,184,29,0) 60%)}
+.ad-trichome .ad-label{background:#F5B81D;color:#14532D}
+.ad-trichome .ad-house{gap:16px;padding:22px 18px 14px}
+.ad-sprout{flex:none;width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 38% 32%,#FFF3C4,#F5B81D 78%);border:2px solid #FFF8E1;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+.ad-trichome .ad-house-text strong{color:#FFF8E1;font-size:clamp(21px,2.6vw,27px)}
+.ad-trichome .ad-house-text strong span{color:#F5B81D}
+.ad-trichome .ad-house-text p{color:#E3F2C9;font-size:14.5px;max-width:62ch}
+.ad-trichome .ad-house-text p b{color:#FFF8E1}
+.ad-cta-tz{background:linear-gradient(180deg,#FFD54F,#F5B81D 55%,#D99A06);border-color:#8A5E02;color:#14532D}
+.ad-cta-tz:hover{filter:brightness(1.08)}
+@media (max-width:700px){
+  .ad-sprout{width:48px;height:48px}
+}
 /* placements table on Advertise page */
 .legal-table{width:100%;border-collapse:collapse;margin:6px 0 16px;background:rgba(4,6,15,.35);border:1px solid var(--line)}
 .legal-table th{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:12px;text-align:left;color:#0B1B4D;background:#C9D1DE;padding:10px 12px}
@@ -489,7 +504,7 @@ dialog{position:relative}
   <section class="row" data-homeblock id="calendarSection">
     <div class="row-head">
       <h2>Release <em>Calendar</em></h2>
-      <p>Every date that matters between now and the end of 2027, in order. U.S. theatrical dates — studios do move them, so this is the plan as of November 7, 2026.</p>
+      <p>Every date that matters between now and the end of 2027, in order. U.S. theatrical dates — studios do move them, so this is the plan as of November 4, 2026.</p>
     </div>
     <table class="calendar">
       <thead><tr><th scope="col">Date</th><th scope="col">Movie</th><th scope="col">Studio / Notes</th></tr></thead>
@@ -497,18 +512,39 @@ dialog{position:relative}
     </table>
   </section>
 
+  <div class="ad-static" id="trichomeAdWrap" data-homeblock style="padding-top:26px">
+    <aside class="ad-slot ad-trichome" aria-label="Advertisement — Trichome Zone">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-house">
+        <span class="ad-sprout" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M24 44c0-8 0-14 0-20" stroke="#14532D" stroke-width="3.4" stroke-linecap="round"/>
+            <path d="M24 26C24 17 18 11 8 10c1 10 7 16 16 16z" fill="#2E7D32"/>
+            <path d="M24 22c0-8 5-13 14-14-1 9-6 14-14 14z" fill="#43A047"/>
+            <circle cx="24" cy="8" r="3.4" fill="#7C3AED"/>
+            <path d="M24 11v5" stroke="#7C3AED" stroke-width="2.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <div class="ad-house-text">
+          <strong>Trichome<span>Zone</span>.com</strong>
+          <p><b>Cannabis news — US &amp; International.</b> Policy &amp; regulation, business &amp; markets, New York and California coverage, science &amp; health, a beginner&rsquo;s Grow Guide, and the federal hemp ban countdown — updated daily.</p>
+        </div>
+        <a class="ad-cta ad-cta-tz" href="https://trichomezone.com/" target="_blank" rel="noopener noreferrer">Visit Trichome Zone</a>
+      </div>
+    </aside>
+  </div>
+
   <section class="row" data-homeblock>
     <div class="about">
       <h2>About <span>Blockbuster Zone</span></h2>
       <p>Blockbuster Zone is owned and operated by <strong>Sean O'Friel</strong>. It is a movie hub in the same spirit as a streaming home page: what's playing right now, what's coming up next, and the films from the last ten years that are actually worth your time. No endless scroll of filler — just the releases, the dates, and the box office, kept straight.</p>
       <p>Right now the story of the season is December 18, 2026: Marvel's <em>Avengers: Doomsday</em> and Denis Villeneuve's <em>Dune: Part Three</em> opening on the very same day. Pick a side — or do the double feature.</p>
       <p>Staying in instead? Our <strong>Stream Free</strong> section rounds up the best legal places to watch movies for free — Tubi, Pluto TV, The Roku Channel, Fandango at Home, and more — no subscription required. <button type="button" class="foot-link" data-nav="freestream" style="font-size:14px;padding-left:2px">Browse Stream Free →</button></p>
-      <p class="sources">Release dates and box-office figures checked November 7, 2026, from
+      <p class="sources">Release dates and box-office figures checked November 4, 2026, from
         <a href="https://ew.com/2026-movie-release-premiere-dates-11877222" target="_blank" rel="noopener noreferrer">Entertainment Weekly's 2026 release guide</a>,
         <a href="https://editorial.rottentomatoes.com/article/2026-holiday-movie-preview/" target="_blank" rel="noopener noreferrer">Rotten Tomatoes' holiday preview</a>,
-        <a href="https://www.metacritic.com/news/upcoming-movie-release-dates-schedule/" target="_blank" rel="noopener noreferrer">Metacritic's release calendar</a>,
-        <a href="https://www.boxofficemojo.com/month/to-date/2026/?sort=grossToDate" target="_blank" rel="noopener noreferrer">Box Office Mojo</a>, and
-        <a href="https://www.thewrap.com/creative-content/movies/godzilla-minus-zero-saturday-box-office/" target="_blank" rel="noopener noreferrer">TheWrap's weekend box-office report</a>.
+        <a href="https://www.metacritic.com/news/upcoming-movie-release-dates-schedule/" target="_blank" rel="noopener noreferrer">Metacritic's release calendar</a>, and
+        <a href="https://www.boxofficemojo.com/month/to-date/2026/?sort=grossToDate" target="_blank" rel="noopener noreferrer">Box Office Mojo</a>.
         Top 10 is an editorial ranking weighing awards, box office, and lasting impact, in line with critics' decade lists.</p>
       <p class="sources">About the posters: every movie on Blockbuster Zone is shown with <strong>its own official studio poster or promotional image</strong> — the same artwork the studio released for that film — reproduced in <strong>low resolution</strong> and used solely to identify the film on this editorial movie-information page. Where a film has no poster yet, its official studio title / logo art is shown instead. Posters and promotional images are <strong>© their respective studios and rights holders</strong> (including Marvel Studios, Warner Bros., Disney, Universal, Sony, Lionsgate, Paramount, DC Studios, A24 and Searchlight Pictures) and are used under <strong>fair use</strong> for identification and commentary. Blockbuster Zone is not affiliated with or endorsed by any studio, and the images are not sold or redistributed. Rights holders can reach us at any time via the Contact Us page for a credit correction or removal.</p>
       <p class="sources">Advertising on this page is always labeled &ldquo;Advertisement.&rdquo; Sponsors do not influence our release coverage, rankings, or the Top 10. See the Advertise With Us and AdSense pages linked in the footer for details.</p>
@@ -714,11 +750,8 @@ function P(id){ return POSTERS[id] || ("assets/photos/"+id+".jpg"); }
 <script>
 var MOVIES = [
 /* ---------- NOW SHOWING ---------- */
-{id:"godzilla-minus-zero",sec:"now",title:"Godzilla Minus Zero",genre:"Sci-Fi · Action",date:"Nov 6, 2026",dateShort:"In Theaters",studio:"Toho / GKIDS",director:"Takashi Yamazaki",cast:"",desc:"The follow-up to the Oscar-winning Godzilla Minus One stomps straight to No. 1 — the fourth non-English-language film ever to top the US box office, and the biggest opening ever for distributor GKIDS. Also in IMAX.",extra:"Friday: $13.5M (incl. $6.7M previews) · Tracking $30–33M weekend · A CinemaScore",v:6},
-{id:"cat-in-the-hat",sec:"now",title:"The Cat in the Hat",genre:"Animation · Family",date:"Nov 6, 2026",dateShort:"In Theaters",studio:"Warner Bros.",director:"Alessandro Carloni & Erica Rivinoja",cast:"Bill Hader",desc:"Dr. Seuss's most famous troublemaker returns in a new animated feature — No. 2 at the box office in its opening weekend.",extra:"Friday: ~$5M · Tracking $17–20M weekend · A CinemaScore",v:3},
-{id:"wild-horse-nine",sec:"now",title:"Wild Horse Nine",genre:"Drama",date:"Nov 6, 2026",dateShort:"In Theaters",studio:"Searchlight Pictures",director:"Martin McDonagh",cast:"Sam Rockwell · John Malkovich",desc:"Martin McDonagh's new drama from Searchlight leads the prestige pack opening the first weekend of November.",extra:"Tracking $5–7M opening weekend",v:5},
-{id:"you-can-see-everything",sec:"now",title:"You Can See Everything",genre:"Documentary",date:"Oct 16, 2026",dateShort:"In Theaters",studio:"A24",director:"Nathan Fielder & Lance Oppenheim",cast:"Elizabeth Holmes (subject)",desc:"The Elizabeth Holmes documentary that climbed to No. 1 in its third weekend — a rare feat for a doc in wide release.",extra:"This weekend: tracking ~$8M · $63.9M+ domestic total",v:1},
-{id:"clayface",sec:"now",title:"Clayface",genre:"Horror · DC",date:"Oct 23, 2026",dateShort:"In Theaters",studio:"Warner Bros. / DC",director:"",cast:"",desc:"The R-rated DC film centered on the Batman villain has slipped out of the top five in its third weekend.",extra:"Just over $90M worldwide · $44.1M domestic total",v:3},
+{id:"you-can-see-everything",sec:"now",title:"You Can See Everything",genre:"Documentary",date:"Oct 16, 2026",dateShort:"In Theaters",studio:"A24",director:"Nathan Fielder & Lance Oppenheim",cast:"Elizabeth Holmes (subject)",desc:"The Elizabeth Holmes documentary that climbed to No. 1 in its third weekend — a rare feat for a doc in wide release.",extra:"Weekend of Oct. 30–Nov. 1: $10.6M · $63.9M domestic total",v:1},
+{id:"clayface",sec:"now",title:"Clayface",genre:"Horror · DC",date:"Oct 23, 2026",dateShort:"In Theaters",studio:"Warner Bros. / DC",director:"",cast:"",desc:"The R-rated DC film centered on the Batman villain held No. 2 over Halloween weekend in 3,478 theaters.",extra:"Weekend: $10.4M · $44.1M domestic total",v:3},
 {id:"wildwood",sec:"now",title:"Wildwood",genre:"Animation",date:"Oct 23, 2026",dateShort:"In Theaters",studio:"LAIKA",director:"",cast:"",desc:"LAIKA's stop-motion fantasy held No. 3 and has already passed the studio's earlier film, Missing Link, at the domestic box office.",extra:"Weekend: $7.5M · $25.9M domestic total",v:5},
 {id:"wicker",sec:"now",title:"Wicker",genre:"Thriller",date:"Oct 23, 2026",dateShort:"In Theaters",studio:"Black Bear",director:"—",cast:"",desc:"Second-weekend thriller holding in the top five of the North American box office.",extra:"Weekend: $4.1M · $13.5M total",v:4},
 {id:"street-fighter",sec:"now",title:"Street Fighter",genre:"Action",date:"Oct 16, 2026",dateShort:"In Theaters",studio:"Paramount",director:"—",cast:"",desc:"The new Street Fighter film has more than tripled the 1994 film's opening gross and has blown past its domestic record.",extra:"$53.5M domestic total",v:2},
@@ -726,13 +759,16 @@ var MOVIES = [
 {id:"spider-man-brand-new-day",sec:"now",title:"Spider-Man: Brand New Day",genre:"Superhero",date:"Jul 31, 2026",dateShort:"In Theaters",studio:"Sony / Marvel",director:"",cast:"",desc:"The summer's superhero giant — still on screens months after opening, and closing in on a billion dollars.",extra:"$958.9M total gross",v:2},
 {id:"the-odyssey",sec:"now",title:"The Odyssey",genre:"Epic",date:"2026",dateShort:"In Theaters",studio:"Universal",director:"Christopher Nolan",cast:"Matt Damon · Tom Holland · Anne Hathaway",desc:"Christopher Nolan's epic is the year's box-office phenomenon, with a worldwide haul reported around $1.8 billion.",extra:"Approx. $1.799B worldwide (reported)",v:4},
 /* ---------- UPCOMING 2026 ---------- */
+{id:"godzilla-minus-zero",sec:"upcoming",title:"Godzilla Minus Zero",genre:"Sci-Fi · Action",date:"Nov 6, 2026",dateShort:"Nov 6",studio:"Toho / GKIDS",director:"",cast:"",desc:"The follow-up to the Oscar-winning Godzilla Minus One stomps into US theaters, also in IMAX.",extra:"Opens Friday, November 6, 2026",v:6},
+{id:"cat-in-the-hat",sec:"upcoming",title:"The Cat in the Hat",genre:"Animation · Family",date:"Nov 6, 2026",dateShort:"Nov 6",studio:"Warner Bros.",director:"—",cast:"",desc:"Dr. Seuss's most famous troublemaker returns in a new animated feature, opening wide November 6.",extra:"Opens Friday, November 6, 2026",v:3},
+{id:"wild-horse-nine",sec:"upcoming",title:"Wild Horse Nine",genre:"Drama",date:"Nov 6, 2026",dateShort:"Nov 6",studio:"Searchlight Pictures",director:"Martin McDonagh",cast:"Sam Rockwell · John Malkovich",desc:"Martin McDonagh's new drama from Searchlight leads the prestige pack opening the first weekend of November.",extra:"Opens Friday, November 6, 2026",v:5},
 {id:"i-play-rocky",sec:"upcoming",title:"I Play Rocky",genre:"Drama",date:"Nov 6, 2026",dateShort:"Nov 6 Ltd",studio:"Amazon MGM",director:"Peter Farrelly",cast:"",desc:"The true story of how Sylvester Stallone fought to play Rocky himself. Limited November 6, wide November 20 — with the original Rocky back in theaters the same month for its 50th anniversary.",extra:"Limited Nov 6 · Wide Nov 20, 2026",v:4},
 {id:"hunger-games-sunrise",sec:"upcoming",title:"The Hunger Games: Sunrise on the Reaping",genre:"Action · Adventure",date:"Nov 20, 2026",dateShort:"Nov 20",studio:"Lionsgate",director:"Francis Lawrence (franchise)",cast:"",desc:"Back to Panem for the 50th Hunger Games — the story of a young Haymitch Abernathy, decades before Katniss.",extra:"Opens Friday, November 20, 2026",v:2},
 {id:"hexed",sec:"upcoming",title:"Hexed",genre:"Animation · Family",date:"Nov 25, 2026",dateShort:"Nov 25",studio:"Disney",director:"",cast:"",desc:"Disney's original animated feature for Thanksgiving weekend — a mother-son story with a magical twist.",extra:"Opens Wednesday, November 25, 2026",v:1},
 {id:"focker-in-law",sec:"upcoming",title:"Focker In-Law",genre:"Comedy",date:"Nov 25, 2026",dateShort:"Nov 25",studio:"Universal",director:"—",cast:"",desc:"The Focker family returns for Thanksgiving weekend in the next chapter of the Meet the Parents comedy series.",extra:"Opens Wednesday, November 25, 2026",v:3},
 {id:"violent-night-2",sec:"upcoming",title:"Violent Night 2",genre:"Action · Comedy",date:"Dec 4, 2026",dateShort:"Dec 4",studio:"Universal",director:"—",cast:"David Harbour",desc:"Santa is back on the naughty list. The sequel to the surprise holiday action hit opens the first weekend of December.",extra:"Opens Friday, December 4, 2026",v:6},
 {id:"behemoth",sec:"upcoming",title:"Behemoth!",genre:"Drama · Music",date:"Dec 4, 2026",dateShort:"Dec 4",studio:"Searchlight Pictures",director:"Tony Gilroy",cast:"Pedro Pascal",desc:"Tony Gilroy's music-world drama, one of the early-December awards-season plays from Searchlight.",extra:"Opens Friday, December 4, 2026",v:5},
-{id:"avengers-doomsday",sec:"upcoming",title:"Avengers: Doomsday",genre:"Superhero · Sci-Fi",date:"Dec 18, 2026",dateShort:"Dec 18",studio:"Marvel Studios / Disney",director:"Anthony & Joe Russo",cast:"Robert Downey Jr. as Doctor Doom · Pedro Pascal · Vanessa Kirby",desc:"Robert Downey Jr. returns to Marvel — as the villain. The Russo brothers direct the Avengers against Doctor Doom in the biggest opening of the year. Marvel just announced the Doomsday Global Tour, and the final trailer is expected between November 10 and 25.",extra:"Opens Friday, December 18, 2026 · Also in IMAX",v:2},
+{id:"avengers-doomsday",sec:"upcoming",title:"Avengers: Doomsday",genre:"Superhero · Sci-Fi",date:"Dec 18, 2026",dateShort:"Dec 18",studio:"Marvel Studios / Disney",director:"Anthony & Joe Russo",cast:"Robert Downey Jr. as Doctor Doom · Pedro Pascal · Vanessa Kirby",desc:"Robert Downey Jr. returns to Marvel — as the villain. The Russo brothers direct the Avengers against Doctor Doom in the biggest opening of the year.",extra:"Opens Friday, December 18, 2026 · Also in IMAX",v:2},
 {id:"dune-part-three",sec:"upcoming",title:"Dune: Part Three",genre:"Sci-Fi · Epic",date:"Dec 18, 2026",dateShort:"Dec 18",studio:"Warner Bros.",director:"Denis Villeneuve",cast:"Timothée Chalamet · Zendaya",desc:"Denis Villeneuve completes his Dune trilogy, adapting Dune Messiah — opening the same day as Avengers: Doomsday. Fans call it “Dunesday.”",extra:"Opens Friday, December 18, 2026 · Also in IMAX",v:1},
 {id:"angry-birds-3",sec:"upcoming",title:"The Angry Birds Movie 3",genre:"Animation · Family",date:"Dec 23, 2026",dateShort:"Dec 23",studio:"Rovio / Sega",director:"—",cast:"",desc:"The flock flies back to theaters two days before Christmas for the holiday family crowd.",extra:"Opens Wednesday, December 23, 2026",v:3},
 {id:"jumanji-open-world",sec:"upcoming",title:"Jumanji: Open World",genre:"Adventure · Comedy",date:"Dec 25, 2026",dateShort:"Dec 25",studio:"Sony",director:"Jake Kasdan (franchise)",cast:"Dwayne Johnson · Jack Black · Kevin Hart · Karen Gillan",desc:"This time the game escapes into the real world. The Johnson–Hart–Black–Gillan team returns on Christmas Day.",extra:"Opens Friday, December 25, 2026",v:4},
@@ -773,8 +809,8 @@ var TOP10ALLTIME = [
 ];
 
 var SECTIONS = [
-{key:"now",heading:"Now <em>Showing</em>",tag:"In theaters now",blurb:"What is actually on screens this week. Friday estimates for the weekend of November 6 – 8, 2026 — Godzilla Minus Zero stomps to No. 1."},
-{key:"upcoming",heading:"Upcoming <em>Hollywood Movies</em>",tag:"Nov – Dec 2026",blurb:"The rest of 2026, date by date — from Rocky to the Dunesday double-header on December 18."},
+{key:"now",heading:"Now <em>Showing</em>",tag:"In theaters now",blurb:"What is actually on screens this week. Box office from the weekend of October 30 – November 1, 2026."},
+{key:"upcoming",heading:"Upcoming <em>Hollywood Movies</em>",tag:"Nov – Dec 2026",blurb:"The rest of 2026, date by date — from Godzilla and Rocky to the Dunesday double-header on December 18."},
 {key:"soon",heading:"Coming Soon <em>2027</em>",tag:"Next year",blurb:"The big dates already locked in for 2027: Spider-Verse, Superman, Batman, Gollum, and Secret Wars."}
 ];
 
