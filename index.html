@@ -77,12 +77,12 @@ button{font:inherit;cursor:pointer}
 .wordmark-text::after{content:"";height:4px;margin-top:5px;background:linear-gradient(90deg,var(--gold-bright) 0 58%,var(--velvet-bright) 58% 100%);box-shadow:2px 2px 0 #000}
 .wordmark .big{display:block;color:var(--velvet-bright);font-size:.54em;letter-spacing:.46em;margin-left:.05em;text-shadow:1px 1px 0 #000,2px 2px 0 #000,3px 3px 0 var(--gold-deep)}
 .wordmark .screen{display:block;color:var(--gold-bright);font-size:1.08em;letter-spacing:.045em;text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,2px 2px 0 #000,4px 4px 0 var(--velvet),7px 7px 0 #101E33}
-.mainnav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;align-items:stretch;flex:1 1 540px;max-width:600px}
+.mainnav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;align-items:stretch;flex:1 1 560px;max-width:660px}
 /* Category buttons as compact gold cinema tickets: squared corners,
    punched semicircle notches on both sides (mask), and a dashed
    perforation line inset from each edge (::before/::after). Kept
    narrow and tall — labels stack on two lines — so each ticket reads
-   as a stub, not a long strip. Same 2 rows of 4, same order. Gold was
+   as a stub, not a long strip. Nine tickets in two rows (5 + 4). Gold was
    chosen over red: the banner seats are already red, and gold ties to
    the site's marquee trim while staying high-contrast on the blue
    header. The selected ticket inverts to deep blue with gold type. */
@@ -383,8 +383,8 @@ dialog{position:relative}
   .spot-wrap{grid-template-columns:1fr}
   .vs{margin:2px auto}
   .topbar-in{gap:10px;padding:10px 14px}
-  .mainnav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;width:100%;flex:1 1 100%;max-width:none}
-  .mainnav button{width:100%;padding:7px 12px;font-size:12px;letter-spacing:.05em;min-height:54px}
+  .mainnav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;width:100%;flex:1 1 100%;max-width:none}
+  .mainnav button{width:100%;padding:7px 8px;font-size:12px;letter-spacing:.04em;min-height:54px}
   .topbar-right{margin-left:0;width:100%}
   .searchbox{flex:1}
   .top-row{grid-template-columns:70px 64px 1fr}
@@ -396,10 +396,10 @@ dialog{position:relative}
   .calendar td:first-child{color:var(--gold-bright)}
 }
 @media (max-width:520px){
-  .mainnav{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
-  .mainnav button{font-size:11px;letter-spacing:.03em;padding:7px 10px;min-height:52px}
-  .mainnav button::before{left:6px}
-  .mainnav button::after{right:6px}
+  .mainnav{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+  .mainnav button{font-size:10.5px;letter-spacing:.02em;padding:7px 9px;min-height:52px}
+  .mainnav button::before{left:5px}
+  .mainnav button::after{right:5px}
 }
 .no-trailer{display:inline-flex;align-items:center;justify-content:center;color:var(--dim)!important;background:none!important;border:1px dashed var(--line)!important;font-weight:600;cursor:default;text-decoration:none}
 #dlgTrailer[aria-disabled="true"]{opacity:.55;filter:grayscale(.5);pointer-events:none}
@@ -438,6 +438,42 @@ dialog{position:relative}
 .genre-pill:active{transform:translateY(2px);box-shadow:0 1px 0 #04081C}
 .genre-pill:focus-visible{outline:2px solid #E9EEF8;outline-offset:2px}
 .genre-pill[aria-pressed="true"]{border-color:var(--gold);box-shadow:0 3px 0 #04081C,0 0 0 1px rgba(217,172,69,.5),0 4px 14px rgba(43,80,200,.55),inset 0 1px 0 rgba(255,255,255,.35)}
+/* ---------- Shop: new & used physical media marketplace ---------- */
+.shop-intro{color:var(--muted);max-width:78ch;margin:0 0 14px;font-size:16px;line-height:1.65}
+.shop-intro b{color:var(--cream)}
+.shop-disc{font-size:13px;color:var(--dim);border:1px dashed var(--gold-deep);border-radius:8px;padding:10px 14px;margin:0 0 20px;max-width:78ch;line-height:1.55}
+.shop-count{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:12.5px;color:var(--gold-bright);margin:0 0 14px}
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.shop-card{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(0,0,0,.5)}
+.shop-poster{position:relative;border:0;padding:0;background:#0A1430;cursor:pointer;width:100%}
+.shop-poster img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 22%;display:block}
+.shop-poster:focus-visible{outline:2px solid #E9EEF8;outline-offset:-2px}
+.shop-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:9px;flex:1}
+.shop-badges{display:flex;flex-wrap:wrap;gap:6px}
+.fmt-badge{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.09em;font-size:11px;font-weight:700;color:#12275E;background:linear-gradient(180deg,#F9E08A,#D9AC45);border:1px solid #9A7B2E;border-radius:4px;padding:3px 8px}
+.cond-badge{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.09em;font-size:11px;font-weight:700;border-radius:4px;padding:3px 8px;border:1px solid}
+.cond-badge.new{color:#BFF0C9;background:rgba(28,120,60,.22);border-color:#2E7D46}
+.cond-badge.used{color:#FFD9A8;background:rgba(160,90,20,.22);border-color:#A05A14}
+.shop-body h3{margin:0;font-size:19px;color:var(--cream);line-height:1.25}
+.shop-meta{font-size:12.5px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;font-family:"Oswald",sans-serif}
+.shop-note{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.shop-group{border-top:1px solid var(--line-soft);padding-top:9px}
+.shop-group-label{display:block;font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.11em;font-size:11.5px;font-weight:700;color:var(--gold-bright);margin-bottom:7px}
+.shop-links{display:flex;flex-wrap:wrap;gap:6px}
+.shop-links a{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.07em;font-size:12px;font-weight:600;color:var(--cream);background:#12224A;border:1px solid var(--line);border-radius:4px;padding:6px 10px;text-decoration:none}
+.shop-links a:hover{border-color:var(--gold);color:var(--gold-bright)}
+.shop-links a:focus-visible{outline:2px solid #E9EEF8;outline-offset:2px}
+.shop-guide-head{margin:34px 0 6px;font-family:"Anton",Impact,sans-serif;text-transform:uppercase;font-size:clamp(24px,3.4vw,34px);color:var(--cream)}
+.shop-guide-head em{font-style:normal;color:var(--gold-bright)}
+.shop-guide-sub{color:var(--muted);max-width:78ch;margin:0 0 18px;line-height:1.6}
+.shop-guide-group{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.13em;font-size:13px;font-weight:700;color:var(--gold-bright);margin:20px 0 10px}
+.retail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.retail-card{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);padding:14px 16px;box-shadow:0 8px 22px rgba(0,0,0,.45)}
+.retail-card h4{margin:0 0 5px;font-size:16px}
+.retail-card h4 a{color:var(--cream);text-decoration:none}
+.retail-card h4 a:hover{color:var(--gold-bright);text-decoration:underline}
+.retail-card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.55}
+@media (max-width:520px){.shop-grid{grid-template-columns:1fr}.retail-grid{grid-template-columns:1fr}}
 .stream-subhead{font-family:"Anton",Impact,sans-serif;text-transform:uppercase;font-size:clamp(22px,3vw,30px);color:var(--cream);margin:34px 0 6px}
 .stream-subhead em{font-style:normal;color:var(--gold-bright)}
 .stream-subnote{color:var(--muted);margin:0 0 18px;max-width:72ch}
@@ -550,6 +586,7 @@ dialog{max-height:calc(100dvh - 24px);overflow-y:auto}
       <button type="button" data-nav="top10alltime" aria-pressed="false"><span>Top 10</span><span>All Time</span></button>
       <button type="button" data-nav="trailers" aria-pressed="false">Trailers</button>
       <button type="button" data-nav="freestream" aria-pressed="false"><span>Stream</span><span>Free</span></button>
+<button type="button" data-nav="shop" aria-pressed="false"><span>Shop</span><span>Discs</span></button>
     </nav>
     <div class="topbar-right">
       <span class="mylist-count" id="mylistCount">My List · <b>0</b></span>
@@ -1391,6 +1428,115 @@ function bindGenreFilters(){
     });
   });
 }
+/* ---------- Shop: niche marketplace for new & used physical media.
+   Every link goes to a retailer's own search results for the title —
+   no product pages, prices, or stock levels are listed here, because
+   those change daily at each store. Some outbound links are affiliate
+   links; see the disclosure in the Shop section. ---------- */
+var SHOP_RETAILERS={
+  amazon:{name:"Amazon",blurb:"The biggest shelf of all — new releases, steelbooks, and fast delivery on just about everything.",search:function(q){return "https://www.amazon.com/s?k="+q;},home:"https://www.amazon.com/"},
+  walmart:{name:"Walmart",blurb:"Low prices on mainstream DVD, Blu-ray, and 4K, with easy store pickup.",search:function(q){return "https://www.walmart.com/search?q="+q;},home:"https://www.walmart.com/"},
+  target:{name:"Target",blurb:"Exclusive editions and steelbooks you will not find at other big-box stores.",search:function(q){return "https://www.target.com/s?searchTerm="+q;},home:"https://www.target.com/"},
+  bestbuy:{name:"Best Buy",blurb:"A go-to for 4K UHD and limited steelbook runs — the good ones sell out fast.",search:function(q){return "https://www.bestbuy.com/site/searchpage.jsp?st="+q;},home:"https://www.bestbuy.com/"},
+  bn:{name:"Barnes & Noble",blurb:"Deep film catalog, plus the famous Criterion sales — half off, twice a year.",search:function(q){return "https://www.barnesandnoble.com/s/"+q;},home:"https://www.barnesandnoble.com/"},
+  gruv:{name:"Gruv",blurb:"Universal and Warner 4K and Blu-ray sold direct, with free shipping and constant deals.",search:function(q){return "https://www.gruv.com/search?q="+q;},home:"https://www.gruv.com/"},
+  deepdiscount:{name:"DeepDiscount",blurb:"Frequent sales and some of the lowest prices anywhere on catalog titles.",search:function(q){return "https://www.deepdiscount.com/search?searchterm="+q;},home:"https://www.deepdiscount.com/"},
+  orbit:{name:"Orbit DVD",blurb:"Boutique and cult labels, imports, and limited editions for serious collectors.",search:function(q){return "https://orbitdvd.com/search?q="+q;},home:"https://orbitdvd.com/"},
+  diabolik:{name:"Diabolik DVD",blurb:"Horror, cult, and foreign discs — the specialist shop for the weird stuff.",search:function(q){return "https://www.diabolikdvd.com/?s="+q;},home:"https://www.diabolikdvd.com/"},
+  criterion:{name:"Criterion Collection",blurb:"Restored classics and world cinema in definitive, extras-packed editions.",search:function(q){return "https://www.criterion.com/search?q="+q;},home:"https://www.criterion.com/"},
+  zavvi:{name:"Zavvi",blurb:"UK steelbooks and exclusives — a steelbook hunter's first stop.",search:function(q){return "https://www.zavvi.com/search.list?search="+q;},home:"https://www.zavvi.com/"},
+  rarewaves:{name:"Rarewaves",blurb:"UK retailer with sharp prices on discs and music, shipped worldwide.",search:function(q){return "https://www.rarewaves.com/search?type=product&q="+q;},home:"https://www.rarewaves.com/"},
+  hmv:{name:"HMV",blurb:"The UK high-street legend — exclusives, 4K, and a huge music range.",search:function(q){return "https://hmv.com/search?searchtext="+q;},home:"https://hmv.com/"},
+  moviesunlimited:{name:"Movies Unlimited",blurb:"Mail-order movie specialist since 1978 — a deep catalog of new and collectible discs.",search:function(q){return "https://www.moviesunlimited.com/search?searchterm="+q;},home:"https://www.moviesunlimited.com/"},
+  ebay:{name:"eBay",blurb:"The world's biggest used shelf — out-of-print, rare, and collector copies of everything.",search:function(q){return "https://www.ebay.com/sch/i.html?_nkw="+q;},home:"https://www.ebay.com/"},
+  discogs:{name:"Discogs",blurb:"The marketplace for used CDs and vinyl, with every pressing catalogued by collectors.",search:function(q){return "https://www.discogs.com/search/?q="+q+"&type=all";},home:"https://www.discogs.com/"},
+  bullmoose:{name:"Bull Moose",blurb:"Independent New England chain — new and used movies and music, fairly priced.",search:function(q){return "https://www.bullmoose.com/search?q="+q;},home:"https://www.bullmoose.com/"},
+  bandcamp:{name:"Bandcamp",blurb:"Buy CDs and vinyl direct from artists and labels — they keep the biggest cut.",search:function(q){return "https://bandcamp.com/search?q="+q;},home:"https://bandcamp.com/"},
+  amoeba:{name:"Amoeba Music",blurb:"The legendary record store — new and used CDs, vinyl, and movies by mail.",search:function(q){return "https://www.amoeba.com/search/?s="+q;},home:"https://www.amoeba.com/"}
+};
+var SHOP_FORMAT_KEYS={"DVD":"dvd","Blu-ray":"bluray","4K UHD":"4k","CD":"cd"};
+var SHOP=[
+  {id:"the-godfather",title:"The Godfather",year:"1972",studio:"Paramount Pictures",formats:["4K UHD","Blu-ray","DVD"],steel:true,cond:"new",q:"The Godfather 4K Blu-ray",note:"The essential crime epic. The 4K restoration is the one to own — and the steelbook tends to sell out and climb in price.",nw:["amazon","bestbuy","gruv","bn"],us:["ebay","moviesunlimited","bullmoose"]},
+  {id:"jaws",title:"Jaws",year:"1975",studio:"Universal Pictures",formats:["4K UHD","Blu-ray"],steel:true,cond:"new",q:"Jaws 4K Blu-ray",note:"The original summer blockbuster in a razor-sharp 4K transfer. The steelbook is a genuine shelf centerpiece.",nw:["gruv","amazon","walmart","target"],us:["ebay","bullmoose","moviesunlimited"]},
+  {id:"pulp-fiction",title:"Pulp Fiction",year:"1994",studio:"Miramax",formats:["4K UHD","Blu-ray"],steel:true,cond:"new",q:"Pulp Fiction 4K Blu-ray",note:"Tarantino's defining film — the 4K steelbook is the collector's pick, and standard Blu-rays go cheap.",nw:["amazon","bestbuy","walmart","target"],us:["ebay","bullmoose","moviesunlimited"]},
+  {id:"the-dark-knight",title:"The Dark Knight",year:"2008",studio:"Warner Bros.",formats:["4K UHD","Blu-ray"],steel:true,cond:"new",q:"The Dark Knight 4K Blu-ray",note:"Shot partly in IMAX, and the 4K disc shows it. A reference-quality disc every collection needs.",nw:["gruv","amazon","bestbuy","target"],us:["ebay","bullmoose","moviesunlimited"]},
+  {id:"shawshank-redemption",title:"The Shawshank Redemption",year:"1994",studio:"Columbia Pictures",formats:["4K UHD","Blu-ray"],steel:false,cond:"new",q:"The Shawshank Redemption 4K Blu-ray",note:"The most beloved film ever made, in its best-looking edition yet. Hope, in 4K.",nw:["amazon","walmart","gruv","bn"],us:["ebay","moviesunlimited","bullmoose"]},
+  {id:"oppenheimer",title:"Oppenheimer",year:"2023",studio:"Universal Pictures",formats:["4K UHD","Blu-ray"],steel:true,cond:"new",q:"Oppenheimer 4K Blu-ray",note:"The 4K disc is the reference way to see it — full IMAX sequences included. It sold out at launch and restocks go fast.",nw:["gruv","amazon","bestbuy","walmart"],us:["ebay","bullmoose","moviesunlimited"]},
+  {id:"dune-part-two",title:"Dune: Part Two",year:"2024",studio:"Warner Bros.",formats:["4K UHD","Blu-ray"],steel:true,cond:"new",q:"Dune Part Two 4K Blu-ray",note:"Modern blockbuster filmmaking at its peak — shot for the biggest screen, and the 4K disc is how you keep it that way.",nw:["gruv","amazon","target","bestbuy"],us:["ebay","moviesunlimited","bullmoose"]},
+  {id:"parasite",title:"Parasite",year:"2019",studio:"NEON · Criterion",formats:["Blu-ray","DVD"],steel:false,cond:"new",q:"Parasite Criterion Blu-ray",note:"Bong Joon-ho's Best Picture winner — the Criterion edition is the definitive one, with the black-and-white version included.",nw:["criterion","amazon","bn","deepdiscount"],us:["ebay","bullmoose","moviesunlimited"]},
+  {id:"casablanca",title:"Casablanca",year:"1942",studio:"Warner Bros.",formats:["4K UHD","Blu-ray"],steel:false,cond:"new",q:"Casablanca 4K Blu-ray",note:"Bogart and Bergman, restored in 4K. The most quotable romance ever made has never looked this good.",nw:["gruv","amazon","bn","deepdiscount"],us:["ebay","moviesunlimited","bullmoose"]},
+  {id:"citizen-kane",title:"Citizen Kane",year:"1941",studio:"RKO Radio Pictures",formats:["4K UHD","Blu-ray"],steel:false,cond:"new",q:"Citizen Kane Criterion 4K",note:"Criterion's 4K restoration of the film that rewrote the rules — the cornerstone of any classic-film shelf.",nw:["criterion","amazon","bn","deepdiscount"],us:["ebay","bullmoose","moviesunlimited"]},
+  {id:"everything-everywhere",title:"Everything Everywhere All at Once",year:"2022",studio:"A24 · Lionsgate",formats:["4K UHD","Blu-ray"],steel:false,cond:"new",q:"Everything Everywhere All at Once 4K Blu-ray",note:"Seven Oscars and a multiverse in a hot-dog-fingered masterpiece. The 4K is the way to keep it forever.",nw:["amazon","bestbuy","walmart","deepdiscount"],us:["ebay","bullmoose","moviesunlimited"]},
+  {id:"empire-strikes-back",title:"The Empire Strikes Back",year:"1980",studio:"Lucasfilm",formats:["4K UHD","Blu-ray"],steel:false,cond:"used",q:"The Empire Strikes Back Blu-ray",note:"Out-of-print editions are the collector's game here — older Blu-ray sets and special editions only change hands used.",nw:["amazon","walmart","target"],us:["ebay","moviesunlimited","bullmoose"]},
+  {id:"return-of-the-king",title:"The Lord of the Rings: The Return of the King",year:"2003",studio:"New Line Cinema",formats:["Blu-ray","DVD"],steel:false,cond:"used",q:"Return of the King Extended Edition Blu-ray",note:"The big Extended Edition box sets drift in and out of print — a good used copy is the reliable route to the full appendices.",nw:["amazon","bn","deepdiscount"],us:["ebay","moviesunlimited","bullmoose"]},
+  {id:"la-la-land",title:"La La Land",year:"2016",studio:"Lionsgate",formats:["4K UHD","Blu-ray"],steel:true,cond:"used",q:"La La Land 4K steelbook",note:"The 4K steelbook is out of print and genuinely sought after — it only changes hands used now. A real collector's piece.",nw:["amazon","target"],us:["ebay","bullmoose","moviesunlimited"]},
+  {id:"oppenheimer",title:"Oppenheimer — Original Motion Picture Soundtrack",year:"2023",studio:"Back Lot Music",formats:["CD"],steel:false,cond:"new",q:"Oppenheimer soundtrack CD Ludwig Goransson",note:"Ludwig Göransson's thunderous score on CD — for the car, the shelf, and anyone who still listens on disc.",nw:["amazon","bn","target","amoeba"],us:["discogs","ebay","bullmoose"]},
+  {id:"pulp-fiction",title:"Pulp Fiction — Music from the Motion Picture",year:"1994",studio:"MCA Records",formats:["CD"],steel:false,cond:"new",q:"Pulp Fiction soundtrack CD",note:"One of the great soundtrack albums — surf rock, soul, and dialogue clips. A CD staple since 1994.",nw:["amazon","bn","amoeba","bandcamp"],us:["discogs","ebay","bullmoose"]}
+];
+function shopLinksHTML(keys,q,label){
+  var links=keys.map(function(k){ var r=SHOP_RETAILERS[k]; if(!r) return "";
+    return "<a href='"+r.search(encodeURIComponent(q))+"' target='_blank' rel='noopener noreferrer sponsored' aria-label='Shop for this title at "+esc(r.name)+" — "+label+" link, opens in a new tab'>"+esc(r.name)+" ↗</a>"; }).join("");
+  return links;
+}
+function shopCardHTML(s){
+  var fkeys=s.formats.map(function(f){ return SHOP_FORMAT_KEYS[f]||""; });
+  var badges=s.formats.map(function(f){ return "<span class='fmt-badge'>"+esc(f)+"</span>"; }).join("")
+    +(s.steel?"<span class='fmt-badge'>Steelbook</span>":"")
+    +"<span class='cond-badge "+s.cond+"'>"+(s.cond==="used"?"Used":"New")+"</span>";
+  return "<article class='shop-card' data-title='"+esc(s.title.toLowerCase())+"' data-shop-card data-formats='"+fkeys.join(" ")+(s.steel?" steelbook":"")+"' data-cond='"+s.cond+"'>"
+    +"<button type='button' class='shop-poster' data-open='"+s.id+"' aria-label='Details for "+esc(s.title)+"'><img src='"+P(s.id)+"' alt='Artwork for "+esc(s.title)+" — © "+esc(s.studio)+"' loading='lazy' decoding='async' /></button>"
+    +"<div class='shop-body'><div class='shop-badges'>"+badges+"</div>"
+    +"<h3>"+esc(s.title)+"</h3><span class='shop-meta'>"+esc(s.year)+" · "+esc(s.studio)+"</span>"
+    +"<p class='shop-note'>"+esc(s.note)+"</p>"
+    +"<div class='shop-group'><span class='shop-group-label'>New — shop at (affiliate links)</span><div class='shop-links'>"+shopLinksHTML(s.nw,s.q,"affiliate")+"</div></div>"
+    +"<div class='shop-group'><span class='shop-group-label'>Used &amp; Rare — shop at (external links)</span><div class='shop-links'>"+shopLinksHTML(s.us,s.q,"external")+"</div></div>"
+    +"</div></article>";
+}
+function retailGuideHTML(){
+  var groups=[
+    {label:"New — big shelves & specialists",keys:["amazon","walmart","target","bestbuy","bn","gruv","deepdiscount","orbit","diabolik","criterion","zavvi","rarewaves","hmv"]},
+    {label:"Used & rare — the collector hunt",keys:["ebay","discogs","bullmoose","moviesunlimited"]},
+    {label:"CDs & music",keys:["bandcamp","amoeba","discogs","bullmoose"]}
+  ];
+  var out="<h3 class='shop-guide-head'>Where to <em>Shop</em></h3><p class='shop-guide-sub'>Every store below is a real, established physical-media retailer. Big shelves for new releases, specialists for boutique and cult titles, and marketplaces for the used and out-of-print hunt. Links open each store's homepage in a new tab.</p>";
+  groups.forEach(function(g){
+    out+="<h4 class='shop-guide-group'>"+esc(g.label)+"</h4><div class='retail-grid'>"+g.keys.map(function(k){ var r=SHOP_RETAILERS[k];
+      return "<div class='retail-card'><h4><a href='"+r.home+"' target='_blank' rel='noopener noreferrer sponsored' aria-label='Visit "+esc(r.name)+" (external link, opens in a new tab)'>"+esc(r.name)+" ↗</a></h4><p>"+esc(r.blurb)+"</p></div>"; }).join("")+"</div>";
+  });
+  return out;
+}
+function shopSectionHTML(){
+  var pills=[["all","All"],["dvd","DVD"],["bluray","Blu-ray"],["4k","4K UHD"],["cd","CD"],["steelbook","Steelbook"],["used","Used & Rare"]];
+  var pillHTML="<div class='genre-pills' role='group' aria-label='Filter shop listings by format'>"+pills.map(function(p,i){
+    return "<button type='button' class='genre-pill' data-shop-filter='"+p[0]+"' aria-pressed='"+(i===0?"true":"false")+"'>"+p[1]+"</button>"; }).join("")+"</div>";
+  return "<section class='row' data-section='shop'><div class='row-head'><h2>The <em>Shop</em></h2><p>A niche marketplace for new and used physical media — DVDs, Blu-rays, 4K UHD, and CDs, picked for collectors.</p><span class='row-tag'>New &amp; Used · Physical Media</span></div>"
+    +"<p class='shop-intro'>Streaming splits films across a half-dozen subscriptions, prices keep rising, and titles vanish from services without warning — so owning the disc is quietly coming back. <b>New</b> is for the latest releases and steelbooks; <b>used &amp; rare</b> is where the out-of-print and cult titles live, the ones you simply can't buy new anymore. Buy the disc and it's yours: no subscription, no disappearing act, and 4K picture that still beats streaming.</p>"
+    +"<p class='shop-disc'>Affiliate disclosure: Blockbuster Zone may earn a commission from qualifying purchases. Prices and availability vary by retailer. Every Shop button below opens that retailer's own search results for the title — check the format and edition before you buy.</p>"
+    +pillHTML
+    +"<p class='shop-count' id='shopCount' role='status'></p>"
+    +"<div class='shop-grid'>"+SHOP.map(shopCardHTML).join("")+"</div>"
+    +retailGuideHTML()
+    +"<p class='shop-disc' style='margin-top:22px'>Blockbuster Zone may earn a commission from qualifying purchases. Prices and availability vary by retailer.</p>"
+    +"</section>";
+}
+function bindShopFilters(){
+  var pills=document.querySelectorAll("[data-shop-filter]");
+  if(!pills.length) return;
+  function apply(f){
+    pills.forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-shop-filter")===f?"true":"false"); });
+    var n=0;
+    document.querySelectorAll("[data-shop-card]").forEach(function(c){
+      var hit = f==="all" ? true
+        : f==="used" ? c.getAttribute("data-cond")==="used"
+        : (" "+c.getAttribute("data-formats")+" ").indexOf(" "+f+" ")>-1;
+      c.style.display=hit?"":"none"; if(hit) n++;
+    });
+    var cnt=document.getElementById("shopCount");
+    if(cnt) cnt.textContent = n+" featured listing"+(n===1?"":"s")+(f==="all"?"":" in this view");
+  }
+  pills.forEach(function(b){ b.addEventListener("click",function(){ apply(b.getAttribute("data-shop-filter")); }); });
+  apply("all");
+}
 function render(){
   var wrap=document.getElementById("mainWrap");
   var html="";
@@ -1413,6 +1559,7 @@ function render(){
   html+="<section class='row' data-section='trailers'><div class='row-head'><h2>Trailers</h2><p>Watch the official trailers — every movie on Blockbuster Zone, in one place. Tap Watch Trailer to play it on YouTube.</p><span class='row-tag'>Official Trailers</span></div><div class='trailer-grid'>"+withAds(allTrailers.map(trailerCardHTML))+"</div></section>";
   html+="<section class='row' data-section='freestream'><div class='row-head'><h2>Stream Movies <em>Free</em></h2><p>The best places to watch movies for free — legally. Every service below is a real, licensed outlet: most are free with ad breaks instead of a subscription, and two are completely ad-free with a library card. No sign-up traps, no credit card, no pirated copies.</p><span class='row-tag'>100% Free · Legal</span></div>"+genrePillsHTML()+"<div class='stream-grid'>"+STREAMING.map(streamCardHTML).join("")+"</div>"
     +"<p class='stream-note'><b>How free streaming works:</b> on Tubi, Pluto TV, The Roku Channel, Fandango at Home, Plex, Xumo Play, and YouTube, short commercial breaks pay for the movies, so you never pay a subscription. Kanopy and Hoopla work differently — your public library pays, you watch ad-free with your library card. <b>Good to know:</b> catalogs rotate as licenses change, most of these services are U.S.-focused (some also work in Canada, the U.K., and elsewhere), and brand-new theatrical releases are rarely free on day one — that's what the rental shelf on Fandango at Home is for. List checked November 7, 2026.</p>"+freeTopHTML()+genreGroupsHTML()+"</section>";
+  html+=shopSectionHTML();
   html+=pointsSectionHTML();
   wrap.innerHTML=html+"<p class='empty' id='emptyMsg'>No movies match that search — try another title.</p>";
   // calendar
@@ -1422,6 +1569,7 @@ function render(){
   }).join("");
   bindButtons();
   bindGenreFilters();
+  bindShopFilters();
   updatePointsUI();
 }
 function updateMyListUI(){
