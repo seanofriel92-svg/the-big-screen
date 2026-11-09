@@ -138,7 +138,7 @@ button{font:inherit;cursor:pointer}
 .wordmark-text::after{background:linear-gradient(90deg,#C9D1DE 0 58%,#2B50C8 58% 100%)!important}
 .trailer-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;color:#0B1B4D!important;background:linear-gradient(180deg,#F4F7FC,#C9D1DE 55%,#93A5C4);border-color:#7183A6!important;font-weight:700}
 a.mini-btn.trailer-btn{color:#0B1B4D!important}
-.trailer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:16px}
+.trailer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .trailer-card{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(0,0,0,.5)}
 .trailer-card .t-poster{aspect-ratio:2/3;position:relative;overflow:hidden;background:#060D2B;border:0;padding:0;width:100%;cursor:pointer}
 .trailer-card .t-poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -201,15 +201,19 @@ section.row{padding:44px 0 10px}
 .orig-card p{margin:0 0 11px;font-size:15px;line-height:1.62;color:#D7E0F2}
 .orig-card p:last-child{margin-bottom:2px}
 .orig-card .orig-kicker{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.16em;font-size:11px;color:#9FB4DE}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:16px}
-.grid-wide{grid-template-columns:repeat(auto-fill,minmax(178px,1fr))}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.grid-wide{grid-template-columns:repeat(4,1fr)}
 @media (max-width:700px){
-  .grid,.grid-wide,.trailer-grid{grid-template-columns:repeat(auto-fill,minmax(106px,1fr));gap:12px}
+  .grid,.grid-wide,.trailer-grid{grid-template-columns:repeat(3,1fr);gap:10px}
   .card-foot{flex-wrap:wrap;gap:6px}
   .card-foot .mini-btn{flex:1 1 100%;min-width:0;padding:8px 4px;font-size:11px;letter-spacing:.04em;text-align:center}
   .card-body{padding:10px 11px 12px}
-  .card-body p{font-size:13.5px;line-height:1.45}
-  .card-title{font-size:18px}
+  .card-body p{font-size:12.5px;line-height:1.45}
+  .card-body .meta-line{font-size:10.5px;letter-spacing:.05em}
+  .card-title{font-size:16px}
+  .aff-links a{font-size:10px;padding:6px 3px;letter-spacing:.02em}
+  .aff-cap{font-size:10px;letter-spacing:.08em}
+  .score{font-size:11px}
 }
 
 /* ---------- Movie cards: one-sheet posters under a spotlight ---------- */
@@ -328,17 +332,37 @@ section.row{padding:44px 0 10px}
 .spot-wrap{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch}
 
 /* ---------- Top 10 ---------- */
-.top10{display:flex;flex-direction:column;gap:14px}
-.top-thumb{width:92px;height:124px;object-fit:cover;border-radius:4px;border:1px solid var(--gold-deep);display:block}
-.top-row{display:grid;grid-template-columns:104px 92px 1fr auto;gap:18px;align-items:center;background:linear-gradient(90deg,rgba(43,80,200,.12),rgba(43,80,200,0) 55%),var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);padding:16px 20px 16px 8px;text-align:left;color:inherit;width:100%}
+/* Same wrapping grid as the other movie sections: 4 across on desktop,
+   3 across on phones. Each entry is a compact vertical card — poster on
+   top with the rank number overlaid, title / meta / summary below, and
+   the note badge as a slim footer strip — so four fit side by side. */
+.top10{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch}
+.top-thumb{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border:0;border-bottom:1px solid var(--gold-deep);border-radius:0;display:block}
+.top-row{position:relative;display:flex;flex-direction:column;min-width:0;overflow:hidden;background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);padding:0;text-align:left;color:inherit;width:100%}
 .top-row:hover{border-color:var(--gold-deep)}
-.top-num{font-family:"Anton",Impact,sans-serif;font-size:clamp(56px,7vw,84px);line-height:.9;text-align:center;color:transparent;-webkit-text-stroke:2.5px var(--gold)}
+.top-num{position:absolute;top:8px;left:10px;z-index:2;font-family:"Anton",Impact,sans-serif;font-size:48px;line-height:.9;text-align:center;color:transparent;-webkit-text-stroke:2px var(--gold);filter:drop-shadow(0 2px 7px rgba(0,0,0,.85))}
 .top-row:nth-child(even) .top-num{-webkit-text-stroke-color:var(--velvet-bright)}
-.top-row h3{font-family:"Anton",Impact,sans-serif;text-transform:uppercase;font-size:clamp(22px,3vw,32px);margin:0 0 3px;color:#F4F7FD;font-weight:400}
-.top-row .t-meta{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.13em;font-size:12px;color:var(--gold-bright)}
-.top-row p{margin:6px 0 0;color:var(--muted);font-size:15.5px;max-width:68ch}
-.top-badge{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:11.5px;color:var(--cream);border:1px solid var(--gold-deep);background:#0A1B4D;border-radius:4px;padding:8px 11px;text-align:center;white-space:nowrap}
-.top-badge b{display:block;color:var(--gold-bright);font-size:15px;letter-spacing:.04em}
+.top-row>span:nth-child(3){display:block;padding:11px 12px 12px;flex:1}
+.top-row h3{font-family:"Anton",Impact,sans-serif;text-transform:uppercase;font-size:20px;line-height:1.08;margin:0 0 3px;color:#F4F7FD;font-weight:400}
+.top-row .t-meta{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.09em;font-size:10.5px;color:var(--gold-bright)}
+.top-row p{margin:6px 0 0;color:var(--muted);font-size:13.5px;line-height:1.5}
+.top-badge{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:10.5px;color:var(--cream);border:0;border-top:1px solid var(--line-soft);background:#0A1B4D;border-radius:0;padding:8px 10px;text-align:center;white-space:normal}
+.top-badge b{display:block;color:var(--gold-bright);font-size:13.5px;letter-spacing:.04em;margin-bottom:2px}
+.top-badge .mini-btn{display:inline-flex;margin-top:7px;padding:6px 10px;font-size:11px}
+@media (max-width:1000px){
+  .top-num{font-size:38px}
+  .top-row h3{font-size:17px}
+  .top-row p{font-size:12.5px}
+}
+@media (max-width:700px){
+  .top10{grid-template-columns:repeat(3,1fr);gap:10px}
+  .top-num{font-size:30px;-webkit-text-stroke-width:1.4px;top:5px;left:7px}
+  .top-row>span:nth-child(3){padding:8px 9px 10px}
+  .top-row h3{font-size:14.5px}
+  .top-row .t-meta{font-size:9px;letter-spacing:.05em}
+  .top-row p{font-size:11.5px;line-height:1.42;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+  .top-badge{display:none}
+}
 
 /* ---------- Calendar / about / footer ---------- */
 .calendar{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
@@ -387,9 +411,6 @@ dialog{position:relative}
   .mainnav button{width:100%;padding:7px 8px;font-size:12px;letter-spacing:.04em;min-height:54px}
   .topbar-right{margin-left:0;width:100%}
   .searchbox{flex:1}
-  .top-row{grid-template-columns:70px 64px 1fr}
-  .top-thumb{width:64px;height:86px}
-  .top-badge{display:none}
   .calendar thead{display:none}
   .calendar td{display:block;border-top:0;padding:6px 16px}
   .calendar tr{display:block;border-top:1px solid var(--line-soft);padding:10px 0}
@@ -443,7 +464,7 @@ dialog{position:relative}
 .shop-intro b{color:var(--cream)}
 .shop-disc{font-size:13px;color:var(--dim);border:1px dashed var(--gold-deep);border-radius:8px;padding:10px 14px;margin:0 0 20px;max-width:78ch;line-height:1.55}
 .shop-count{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:12.5px;color:var(--gold-bright);margin:0 0 14px}
-.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .shop-card{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(0,0,0,.5)}
 .shop-poster{position:relative;border:0;padding:0;background:#0A1430;cursor:pointer;width:100%}
 .shop-poster img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 22%;display:block}
@@ -473,7 +494,8 @@ dialog{position:relative}
 .retail-card h4 a{color:var(--cream);text-decoration:none}
 .retail-card h4 a:hover{color:var(--gold-bright);text-decoration:underline}
 .retail-card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.55}
-@media (max-width:520px){.shop-grid{grid-template-columns:1fr}.retail-grid{grid-template-columns:1fr}}
+@media (max-width:1000px){.shop-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){.shop-grid{grid-template-columns:repeat(3,1fr);gap:10px}.shop-card{min-width:0}.shop-body{padding:9px 10px 11px;gap:6px}.shop-body h3{font-size:14.5px;line-height:1.2}.shop-meta{font-size:10px;letter-spacing:.05em}.shop-note{font-size:11.5px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}.fmt-badge,.cond-badge{font-size:9px;padding:2px 5px;letter-spacing:.05em}.shop-group{padding-top:7px}.shop-group-label{font-size:9.5px;letter-spacing:.06em;margin-bottom:5px}.shop-links{gap:4px}.shop-links a{font-size:10px;padding:5px 6px;letter-spacing:.02em}.retail-grid{grid-template-columns:repeat(3,1fr);gap:10px}.retail-card{padding:10px 11px;min-width:0}.retail-card h4{font-size:13.5px}.retail-card p{font-size:11px;line-height:1.45}}
 .stream-subhead{font-family:"Anton",Impact,sans-serif;text-transform:uppercase;font-size:clamp(22px,3vw,30px);color:var(--cream);margin:34px 0 6px}
 .stream-subhead em{font-style:normal;color:var(--gold-bright)}
 .stream-subnote{color:var(--muted);margin:0 0 18px;max-width:72ch}
@@ -692,7 +714,7 @@ dialog{max-height:calc(100dvh - 24px);overflow-y:auto}
   <section class="row" data-homeblock id="calendarSection">
     <div class="row-head">
       <h2>Release <em>Calendar</em></h2>
-      <p>Every date that matters between now and the end of 2027, in order. U.S. theatrical dates — studios do move them, so this is the plan as of November 8, 2026.</p>
+      <p>Every date that matters between now and the end of 2027, in order. U.S. theatrical dates — studios do move them, so this is the plan as of November 4, 2026.</p>
     </div>
     <table class="calendar">
       <thead><tr><th scope="col">Date</th><th scope="col">Movie</th><th scope="col">Studio / Notes</th></tr></thead>
@@ -722,13 +744,17 @@ dialog{max-height:calc(100dvh - 24px);overflow-y:auto}
     </aside>
   </div>
 
+  <!-- Movie Night Points lives near the bottom of the page: rendered by
+       render() into this mount, after the Release Calendar and before About. -->
+  <div id="pointsMount" data-homeblock></div>
+
   <section class="row" data-homeblock>
     <div class="about">
       <h2>About <span>Blockbuster Zone</span></h2>
       <p>Blockbuster Zone is owned and operated by <strong>Sean O'Friel</strong>. It is a movie hub in the same spirit as a streaming home page: what's playing right now, what's coming up next, and the films from the last ten years that are actually worth your time. No endless scroll of filler — just the releases, the dates, and the box office, kept straight.</p>
       <p>Right now the story of the season is December 18, 2026: Marvel's <em>Avengers: Doomsday</em> and Denis Villeneuve's <em>Dune: Part Three</em> opening on the very same day. Pick a side — or do the double feature.</p>
       <p>Staying in instead? Our <strong>Stream Free</strong> section rounds up the best legal places to watch movies for free — Tubi, Pluto TV, The Roku Channel, Fandango at Home, and more — no subscription required. <button type="button" class="foot-link" data-nav="freestream" style="font-size:14px;padding-left:2px">Browse Stream Free →</button></p>
-      <p class="sources">Release dates and box-office figures checked November 8, 2026, from
+      <p class="sources">Release dates and box-office figures checked November 4, 2026, from
         <a href="https://ew.com/2026-movie-release-premiere-dates-11877222" target="_blank" rel="noopener noreferrer">Entertainment Weekly's 2026 release guide</a>,
         <a href="https://editorial.rottentomatoes.com/article/2026-holiday-movie-preview/" target="_blank" rel="noopener noreferrer">Rotten Tomatoes' holiday preview</a>,
         <a href="https://www.metacritic.com/news/upcoming-movie-release-dates-schedule/" target="_blank" rel="noopener noreferrer">Metacritic's release calendar</a>, and
@@ -906,7 +932,7 @@ dialog{max-height:calc(100dvh - 24px);overflow-y:auto}
       <button type="button" class="foot-link" data-page="advertise">Advertise With Us</button>
       <button type="button" class="foot-link" data-page="adsense">AdSense</button>
     </nav>
-    <p>Upcoming movies · Now showing · Top 10 of the past 10 years · Top 10 Movies of All Time · Where to stream movies free — updated November 8, 2026. Blockbuster Zone is owned and operated by Sean O&rsquo;Friel.</p>
+    <p>Upcoming movies · Now showing · Top 10 of the past 10 years · Top 10 Movies of All Time · Where to stream movies free — updated November 7, 2026. Blockbuster Zone is owned and operated by Sean O&rsquo;Friel.</p>
     <p class="fairuse"><b>Fair use &amp; image credits:</b> Movie posters and promotional images are © their respective studios and rights holders (including Marvel Studios, Warner Bros., Disney, Universal, Sony, Lionsgate, Paramount, DC Studios, A24 and Searchlight Pictures). They are shown here in low resolution under fair use (17 U.S.C. § 107) solely to identify each film for editorial information and commentary. Blockbuster Zone is an independent, editorial movie-information page, is not affiliated with or endorsed by any studio, and does not sell or redistribute these images.</p>
     <p class="fairuse"><b>Affiliate disclosure:</b> Some Buy / Rent links on this site are affiliate links — including links to Prime Video, Apple TV, Google Play, and Fandango at Home. If you rent or buy a movie through one of them, Blockbuster Zone may earn a commission at no extra cost to you. As an Amazon Associate, Blockbuster Zone earns from qualifying purchases.</p>
   </div>
@@ -1005,20 +1031,20 @@ function P(id){ return POSTERS[id] || ""; }
 <script>
 var MOVIES = [
 /* ---------- NOW SHOWING ---------- */
-{id:"godzilla-minus-zero",sec:"now",title:"Godzilla Minus Zero",genre:"Sci-Fi · Action",date:"Nov 6, 2026",dateShort:"In Theaters",studio:"Toho / GKIDS",director:"",cast:"",desc:"The follow-up to the Oscar-winning Godzilla Minus One stomped to No. 1 in the US — $14.5M on Friday alone, with 74% of its gross from IMAX and premium screens.",extra:"Friday: $14.5M · Projected ~$32M opening weekend",v:6},
-{id:"cat-in-the-hat",sec:"now",title:"The Cat in the Hat",genre:"Animation · Family",date:"Nov 6, 2026",dateShort:"In Theaters",studio:"Warner Bros.",director:"—",cast:"",desc:"Dr. Seuss's most famous troublemaker returned in a new animated feature — No. 2 at the box office in its opening weekend.",extra:"Friday: $6M · Projected ~$18.7M opening weekend",v:3},
-{id:"wild-horse-nine",sec:"now",title:"Wild Horse Nine",genre:"Drama",date:"Nov 6, 2026",dateShort:"In Theaters",studio:"Searchlight Pictures",director:"Martin McDonagh",cast:"Sam Rockwell · John Malkovich",desc:"Martin McDonagh's new black comedy opened wide November 6 — praised as peak McDonagh.",extra:"Friday: $2.475M · 1,100 theaters",v:5},
-{id:"i-play-rocky",sec:"now",title:"I Play Rocky",genre:"Drama",date:"Nov 6, 2026",dateShort:"In Theaters",studio:"Amazon MGM",director:"Peter Farrelly",cast:"",desc:"The true story of how Sylvester Stallone fought to play Rocky himself. In limited release now, wide November 20 — with the original Rocky back in theaters the same month for its 50th anniversary.",extra:"Limited now · Wide Nov 20, 2026",v:4},
-{id:"you-can-see-everything",sec:"now",title:"You Can See Everything",genre:"Documentary",date:"Oct 16, 2026",dateShort:"In Theaters",studio:"A24",director:"Nathan Fielder & Lance Oppenheim",cast:"Elizabeth Holmes (subject)",desc:"The Elizabeth Holmes documentary that climbed to No. 1 in its third weekend — a rare feat for a doc in wide release — now in its fourth week.",extra:"Over $63.9M domestic total",v:1},
-{id:"clayface",sec:"now",title:"Clayface",genre:"Horror · DC",date:"Oct 23, 2026",dateShort:"In Theaters",studio:"Warner Bros. / DC",director:"",cast:"",desc:"The R-rated DC film centered on the Batman villain held No. 2 over Halloween weekend in 3,478 theaters.",extra:"Over $44.1M domestic total",v:3},
-{id:"wildwood",sec:"now",title:"Wildwood",genre:"Animation",date:"Oct 23, 2026",dateShort:"In Theaters",studio:"LAIKA",director:"",cast:"",desc:"LAIKA's stop-motion fantasy held No. 3 and has already passed the studio's earlier film, Missing Link, at the domestic box office.",extra:"Over $25.9M domestic total",v:5},
-{id:"wicker",sec:"now",title:"Wicker",genre:"Thriller",date:"Oct 23, 2026",dateShort:"In Theaters",studio:"Black Bear",director:"—",cast:"",desc:"Black Bear's Olivia Colman thriller is headed past $20M and into awards contention, with acting campaigns ramping up for Colman and Alexander Skarsgård.",extra:"$15.9M domestic through Nov 4 · headed past $20M",v:4},
-{id:"street-fighter",sec:"now",title:"Street Fighter",genre:"Action",date:"Oct 16, 2026",dateShort:"In Theaters",studio:"Paramount",director:"—",cast:"",desc:"The new Street Fighter film has more than tripled the 1994 film's opening gross and has blown past its domestic record.",extra:"Over $53.5M domestic total",v:2},
-{id:"resident-evil",sec:"now",title:"Resident Evil",genre:"Horror",date:"Sep 18, 2026",dateShort:"In Theaters",studio:"Sony / Columbia",director:"Zach Cregger",cast:"",desc:"Zach Cregger's reboot of the horror franchise is still drawing crowds seven weeks into its run.",extra:"Over $157.4M total gross",v:6},
-{id:"spider-man-brand-new-day",sec:"now",title:"Spider-Man: Brand New Day",genre:"Superhero",date:"Jul 31, 2026",dateShort:"In Theaters",studio:"Sony / Marvel",director:"",cast:"",desc:"The summer's superhero giant — still on screens months after opening, and closing in on a billion dollars.",extra:"Over $958.9M total gross · closing in on $1B",v:2},
+{id:"you-can-see-everything",sec:"now",title:"You Can See Everything",genre:"Documentary",date:"Oct 16, 2026",dateShort:"In Theaters",studio:"A24",director:"Nathan Fielder & Lance Oppenheim",cast:"Elizabeth Holmes (subject)",desc:"The Elizabeth Holmes documentary that climbed to No. 1 in its third weekend — a rare feat for a doc in wide release.",extra:"Weekend of Oct. 30–Nov. 1: $10.6M · $63.9M domestic total",v:1},
+{id:"clayface",sec:"now",title:"Clayface",genre:"Horror · DC",date:"Oct 23, 2026",dateShort:"In Theaters",studio:"Warner Bros. / DC",director:"",cast:"",desc:"The R-rated DC film centered on the Batman villain held No. 2 over Halloween weekend in 3,478 theaters.",extra:"Weekend: $10.4M · $44.1M domestic total",v:3},
+{id:"wildwood",sec:"now",title:"Wildwood",genre:"Animation",date:"Oct 23, 2026",dateShort:"In Theaters",studio:"LAIKA",director:"",cast:"",desc:"LAIKA's stop-motion fantasy held No. 3 and has already passed the studio's earlier film, Missing Link, at the domestic box office.",extra:"Weekend: $7.5M · $25.9M domestic total",v:5},
+{id:"wicker",sec:"now",title:"Wicker",genre:"Thriller",date:"Oct 23, 2026",dateShort:"In Theaters",studio:"Black Bear",director:"—",cast:"",desc:"Second-weekend thriller holding in the top five of the North American box office.",extra:"Weekend: $4.1M · $13.5M total",v:4},
+{id:"street-fighter",sec:"now",title:"Street Fighter",genre:"Action",date:"Oct 16, 2026",dateShort:"In Theaters",studio:"Paramount",director:"—",cast:"",desc:"The new Street Fighter film has more than tripled the 1994 film's opening gross and has blown past its domestic record.",extra:"$53.5M domestic total",v:2},
+{id:"resident-evil",sec:"now",title:"Resident Evil",genre:"Horror",date:"Sep 18, 2026",dateShort:"In Theaters",studio:"Sony / Columbia",director:"Zach Cregger",cast:"",desc:"Zach Cregger's reboot of the horror franchise is still drawing crowds seven weeks into its run.",extra:"$157.4M total gross",v:6},
+{id:"spider-man-brand-new-day",sec:"now",title:"Spider-Man: Brand New Day",genre:"Superhero",date:"Jul 31, 2026",dateShort:"In Theaters",studio:"Sony / Marvel",director:"",cast:"",desc:"The summer's superhero giant — still on screens months after opening, and closing in on a billion dollars.",extra:"$958.9M total gross",v:2},
 {id:"the-odyssey",sec:"now",title:"The Odyssey",genre:"Epic",date:"2026",dateShort:"In Theaters",studio:"Universal",director:"Christopher Nolan",cast:"Matt Damon · Tom Holland · Anne Hathaway",desc:"Christopher Nolan's epic is the year's box-office phenomenon, with a worldwide haul reported around $1.8 billion.",extra:"Approx. $1.799B worldwide (reported)",v:4},
 /* ---------- UPCOMING 2026 ---------- */
-{id:"hunger-games-sunrise",sec:"upcoming",title:"The Hunger Games: Sunrise on the Reaping",genre:"Action · Adventure",date:"Nov 20, 2026",dateShort:"Nov 20",studio:"Lionsgate",director:"Francis Lawrence (franchise)",cast:"",desc:"Back to Panem for the 50th Hunger Games — the story of a young Haymitch Abernathy, decades before Katniss.",extra:"Opens Friday, November 20, 2026 · Early-access screenings from Nov 18",v:2},
+{id:"godzilla-minus-zero",sec:"upcoming",title:"Godzilla Minus Zero",genre:"Sci-Fi · Action",date:"Nov 6, 2026",dateShort:"Nov 6",studio:"Toho / GKIDS",director:"",cast:"",desc:"The follow-up to the Oscar-winning Godzilla Minus One stomps into US theaters, also in IMAX.",extra:"Opens Friday, November 6, 2026",v:6},
+{id:"cat-in-the-hat",sec:"upcoming",title:"The Cat in the Hat",genre:"Animation · Family",date:"Nov 6, 2026",dateShort:"Nov 6",studio:"Warner Bros.",director:"—",cast:"",desc:"Dr. Seuss's most famous troublemaker returns in a new animated feature, opening wide November 6.",extra:"Opens Friday, November 6, 2026",v:3},
+{id:"wild-horse-nine",sec:"upcoming",title:"Wild Horse Nine",genre:"Drama",date:"Nov 6, 2026",dateShort:"Nov 6",studio:"Searchlight Pictures",director:"Martin McDonagh",cast:"Sam Rockwell · John Malkovich",desc:"Martin McDonagh's new drama from Searchlight leads the prestige pack opening the first weekend of November.",extra:"Opens Friday, November 6, 2026",v:5},
+{id:"i-play-rocky",sec:"upcoming",title:"I Play Rocky",genre:"Drama",date:"Nov 6, 2026",dateShort:"Nov 6 Ltd",studio:"Amazon MGM",director:"Peter Farrelly",cast:"",desc:"The true story of how Sylvester Stallone fought to play Rocky himself. Limited November 6, wide November 20 — with the original Rocky back in theaters the same month for its 50th anniversary.",extra:"Limited Nov 6 · Wide Nov 20, 2026",v:4},
+{id:"hunger-games-sunrise",sec:"upcoming",title:"The Hunger Games: Sunrise on the Reaping",genre:"Action · Adventure",date:"Nov 20, 2026",dateShort:"Nov 20",studio:"Lionsgate",director:"Francis Lawrence (franchise)",cast:"",desc:"Back to Panem for the 50th Hunger Games — the story of a young Haymitch Abernathy, decades before Katniss.",extra:"Opens Friday, November 20, 2026",v:2},
 {id:"hexed",sec:"upcoming",title:"Hexed",genre:"Animation · Family",date:"Nov 25, 2026",dateShort:"Nov 25",studio:"Disney",director:"",cast:"",desc:"Disney's original animated feature for Thanksgiving weekend — a mother-son story with a magical twist.",extra:"Opens Wednesday, November 25, 2026",v:1},
 {id:"focker-in-law",sec:"upcoming",title:"Focker In-Law",genre:"Comedy",date:"Nov 25, 2026",dateShort:"Nov 25",studio:"Universal",director:"—",cast:"",desc:"The Focker family returns for Thanksgiving weekend in the next chapter of the Meet the Parents comedy series.",extra:"Opens Wednesday, November 25, 2026",v:3},
 {id:"violent-night-2",sec:"upcoming",title:"Violent Night 2",genre:"Action · Comedy",date:"Dec 4, 2026",dateShort:"Dec 4",studio:"Universal",director:"—",cast:"David Harbour",desc:"Santa is back on the naughty list. The sequel to the surprise holiday action hit opens the first weekend of December.",extra:"Opens Friday, December 4, 2026",v:6},
@@ -1064,8 +1090,8 @@ var TOP10ALLTIME = [
 ];
 
 var SECTIONS = [
-{key:"now",heading:"Now <em>Showing</em>",tag:"In theaters now",blurb:"What is actually on screens this week. Box office from the weekend of November 6–8, 2026 — Friday figures and weekend projections; final totals land Monday."},
-{key:"upcoming",heading:"Upcoming <em>Hollywood Movies</em>",tag:"Nov – Dec 2026",blurb:"The rest of 2026, date by date — from the Hunger Games prequel to the Dunesday double-header on December 18."},
+{key:"now",heading:"Now <em>Showing</em>",tag:"In theaters now",blurb:"What is actually on screens this week. Box office from the weekend of October 30 – November 1, 2026."},
+{key:"upcoming",heading:"Upcoming <em>Hollywood Movies</em>",tag:"Nov – Dec 2026",blurb:"The rest of 2026, date by date — from Godzilla and Rocky to the Dunesday double-header on December 18."},
 {key:"soon",heading:"Coming Soon <em>2027</em>",tag:"Next year",blurb:"The big dates already locked in for 2027: Spider-Verse, Superman, Batman, Gollum, and Secret Wars."}
 ];
 
@@ -1560,8 +1586,11 @@ function render(){
   html+="<section class='row' data-section='freestream'><div class='row-head'><h2>Stream Movies <em>Free</em></h2><p>The best places to watch movies for free — legally. Every service below is a real, licensed outlet: most are free with ad breaks instead of a subscription, and two are completely ad-free with a library card. No sign-up traps, no credit card, no pirated copies.</p><span class='row-tag'>100% Free · Legal</span></div>"+genrePillsHTML()+"<div class='stream-grid'>"+STREAMING.map(streamCardHTML).join("")+"</div>"
     +"<p class='stream-note'><b>How free streaming works:</b> on Tubi, Pluto TV, The Roku Channel, Fandango at Home, Plex, Xumo Play, and YouTube, short commercial breaks pay for the movies, so you never pay a subscription. Kanopy and Hoopla work differently — your public library pays, you watch ad-free with your library card. <b>Good to know:</b> catalogs rotate as licenses change, most of these services are U.S.-focused (some also work in Canada, the U.K., and elsewhere), and brand-new theatrical releases are rarely free on day one — that's what the rental shelf on Fandango at Home is for. List checked November 7, 2026.</p>"+freeTopHTML()+genreGroupsHTML()+"</section>";
   html+=shopSectionHTML();
-  html+=pointsSectionHTML();
   wrap.innerHTML=html+"<p class='empty' id='emptyMsg'>No movies match that search — try another title.</p>";
+  // Movie Night Points renders at the bottom of the page (after the
+  // Release Calendar, before About / footer), not with the sections above.
+  var ptsMount=document.getElementById("pointsMount");
+  if(ptsMount) ptsMount.innerHTML=pointsSectionHTML();
   // calendar
   var cal=MOVIES.filter(function(m){return m.sec==="upcoming"||m.sec==="soon";});
   document.getElementById("calendarBody").innerHTML=cal.map(function(m){
