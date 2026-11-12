@@ -567,6 +567,17 @@ dialog{max-height:calc(100dvh - 24px);overflow-y:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
 
+
+/* ---------- Latest Movie News ---------- */
+.news-list{display:grid;gap:14px}
+.news-item{background:linear-gradient(165deg,#0E3B2A,#06231A);border:1px solid #175C3E;border-left:4px solid var(--doom-bright);border-radius:var(--radius);padding:18px 20px 16px}
+.news-item h3{margin:6px 0 8px;font-family:"Anton",Impact,sans-serif;text-transform:uppercase;font-size:clamp(19px,2.6vw,24px);line-height:1.15}
+.news-item h3 a{color:var(--cream);text-decoration:none}
+.news-item h3 a:hover{color:var(--doom-pale);text-decoration:underline}
+.news-item p{margin:0;color:var(--ink);font-size:15.5px;line-height:1.55}
+.news-meta{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:700;color:var(--doom-bright)}
+.news-note{margin-top:14px;color:var(--muted);font-size:13.5px}
+@media (max-width:700px){.news-item{padding:16px}}
 </style>
 </head>
 <body>
@@ -664,6 +675,60 @@ dialog{max-height:calc(100dvh - 24px);overflow-y:auto}
         <p>Our advice: book the big screen early, see both, and argue about the order afterwards. The countdown at the top of this page is running — we will be covering every trailer, casting surprise, and ticket milestone between now and December 18 right here.</p>
       </article>
     </div>
+  </section>
+</div>
+
+<!-- ============ LATEST MOVIE NEWS ============ -->
+<div class="wrap">
+  <section class="row" id="latest-movie-news" data-homeblock style="padding-top:30px">
+    <div class="row-head">
+      <h2>Latest <em>Movie News</em></h2>
+      <p>The biggest movie stories right now &mdash; box office, trailers, and what&rsquo;s opening next. Tap any headline to read the full story on the original publisher&rsquo;s site.</p>
+      <span class="row-tag">Updated Nov 12, 2026</span>
+    </div>
+    <div class="news-list">
+      <article class="news-item">
+        <span class="news-meta">Nov 8, 2026 &middot; TheWrap</span>
+        <h3><a href="https://www.thewrap.com/creative-content/movies/godzilla-minus-zero-box-office-opening-weekend-gkids-record/" target="_blank" rel="noopener noreferrer">Godzilla Minus Zero Sets Box Office Record With $31 Million Opening</a></h3>
+        <p>Toho&rsquo;s sequel is the No. 1 movie in America, nearly triple the opening of <em>Godzilla Minus One</em> &mdash; and the biggest opening ever for a live-action foreign-language film in North America.</p>
+      </article>
+      <article class="news-item">
+        <span class="news-meta">Nov 12, 2026 &middot; Comic Basics</span>
+        <h3><a href="https://www.comicbasics.com/marvels-new-avengers-doomsday-countdown-promo-reveals-the-mcu-homework-fans-cant-skip/" target="_blank" rel="noopener noreferrer">Marvel&rsquo;s New Avengers: Doomsday Countdown Promo Reveals the MCU Homework Fans Can&rsquo;t Skip</a></h3>
+        <p>Marvel&rsquo;s new &ldquo;Countdown to Avengers: Doomsday&rdquo; trailer lays out the 11 MCU films and shows to revisit before Dec 18 &mdash; and points to <em>Avengers: Endgame: Encore</em> streaming Nov 13 on Disney+.</p>
+      </article>
+      <article class="news-item">
+        <span class="news-meta">Nov 11, 2026 &middot; Bam Smack Pow</span>
+        <h3><a href="https://bamsmackpow.com/marvel-new-avengers-doomsday-trailer-release-date-update-visionquest-finale" target="_blank" rel="noopener noreferrer">New Avengers: Doomsday Trailer Gets Potential Release Update After VisionQuest Finale</a></h3>
+        <p>The third <em>Avengers: Doomsday</em> trailer is expected within the next week, with Thursday, Nov 12 and Monday, Nov 16 both tipped as possible drop dates.</p>
+      </article>
+      <article class="news-item">
+        <span class="news-meta">Nov 6, 2026 &middot; Ster-Kinekor</span>
+        <h3><a href="https://www.sterkinekor.com/article/the-hunger-games-sunrise-on-the-reaping-the-dark-story-behind-one-of-panems-most-important-games" target="_blank" rel="noopener noreferrer">The Hunger Games: Sunrise on the Reaping &mdash; The Quarter Quell Arrives in IMAX</a></h3>
+        <p>The prequel tells young Haymitch Abernathy&rsquo;s story in the 50th Hunger Games &mdash; the Second Quarter Quell, with twice as many tributes &mdash; and opens Nov 20, with the final trailer now out.</p>
+      </article>
+      <article class="news-item">
+        <span class="news-meta">Nov 12, 2026 &middot; TheWrap</span>
+        <h3><a href="https://www.thewrap.com/creative-content/reviews/ebenezer-review-johnny-depp/" target="_blank" rel="noopener noreferrer">Ebenezer Review: Johnny Depp&rsquo;s Christmas Carol Is Stale</a></h3>
+        <p>Johnny Depp returns to a big Hollywood studio film as Scrooge in Ti West&rsquo;s dark take on <em>A Christmas Carol</em> &mdash; but the first reviews are split on whether the comeback lands. It opens Nov 13.</p>
+      </article>
+      <article class="news-item">
+        <span class="news-meta">Nov 10, 2026 &middot; The Hollywood Reporter India</span>
+        <h3><a href="https://www.hollywoodreporterindia.com/features/insight/ramayana-becomes-first-indian-film-to-top-uk-ireland-weekend-box-office-beats-godzilla-minus-zero" target="_blank" rel="noopener noreferrer">Ramayana: Part 1 Becomes First Indian Film to Top UK-Ireland Box-Office Charts</a></h3>
+        <p>Nitesh Tiwari&rsquo;s mythological epic was the world&rsquo;s second-highest-grossing film of the weekend, with $52.15 million worldwide &mdash; and the biggest opening weekend ever for an Indian film in the UK and Ireland.</p>
+      </article>
+      <article class="news-item">
+        <span class="news-meta">Nov 12, 2026 &middot; The Futon Critic / Netflix</span>
+        <h3><a href="http://www.thefutoncritic.com/video/2026/11/12/video-ray-gunn-official-trailer-number-2-netflix-102310/20261112netflix03/" target="_blank" rel="noopener noreferrer">Ray Gunn &mdash; Official Trailer #2</a></h3>
+        <p>Brad Bird&rsquo;s animated sci-fi noir, starring Sam Rockwell and Scarlett Johansson, gets a second trailer ahead of its Dec 4 theatrical bow and Dec 18 Netflix debut.</p>
+      </article>
+      <article class="news-item">
+        <span class="news-meta">Nov 12, 2026 &middot; That Grape Juice</span>
+        <h3><a href="https://thatgrapejuice.net/entertainment/2026/11/extended-movie-trailer-children-of-blood-and-bone-starring-viola-davis-damson-idris/" target="_blank" rel="noopener noreferrer">Extended Trailer: Children of Blood and Bone</a></h3>
+        <p>Paramount&rsquo;s fantasy epic starring Thuso Mbedu, Damson Idris and Viola Davis gets an extended new trailer &mdash; with a first taste of Tems&rsquo; new song from the soundtrack &mdash; ahead of its January arrival in theaters and IMAX.</p>
+      </article>
+    </div>
+    <p class="news-note">Headlines and summaries by Blockbuster Zone. Full stories live on the original publishers&rsquo; sites &mdash; tap a headline to read the whole article there.</p>
   </section>
 </div>
 
