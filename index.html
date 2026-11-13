@@ -143,7 +143,7 @@ button{font:inherit;cursor:pointer}
 .wordmark-text::after{background:linear-gradient(90deg,#C9D1DE 0 58%,#2B50C8 58% 100%)!important}
 .trailer-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;color:#0B1B4D!important;background:linear-gradient(180deg,#F4F7FC,#C9D1DE 55%,#93A5C4);border-color:#7183A6!important;font-weight:700}
 a.mini-btn.trailer-btn{color:#0B1B4D!important}
-.trailer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.trailer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .trailer-card{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(0,0,0,.5)}
 .trailer-card .t-poster{aspect-ratio:2/3;position:relative;overflow:hidden;background:#060D2B;border:0;padding:0;width:100%;cursor:pointer}
 .trailer-card .t-poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -206,23 +206,23 @@ section.row{padding:44px 0 10px}
 .orig-card p{margin:0 0 11px;font-size:15px;line-height:1.62;color:#D7E0F2}
 .orig-card p:last-child{margin-bottom:2px}
 .orig-card .orig-kicker{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.16em;font-size:11px;color:#9FD8BC}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.grid-wide{grid-template-columns:repeat(4,1fr)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.grid-wide{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media (max-width:700px){
-  .grid,.grid-wide,.trailer-grid{grid-template-columns:repeat(3,1fr);gap:10px}
+  .grid,.grid-wide,.trailer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .card-foot{flex-wrap:wrap;gap:6px}
-  .card-foot .mini-btn{flex:1 1 100%;min-width:0;padding:8px 4px;font-size:11px;letter-spacing:.04em;text-align:center}
+  .card-foot .mini-btn{flex:1 1 46%;min-width:0;padding:8px 4px;font-size:11px;letter-spacing:.04em;text-align:center;white-space:normal;overflow-wrap:anywhere;line-height:1.35}
   .card-body{padding:10px 11px 12px}
   .card-body p{font-size:12.5px;line-height:1.45}
   .card-body .meta-line{font-size:10.5px;letter-spacing:.05em}
   .card-title{font-size:16px}
-  .aff-links a{font-size:10px;padding:6px 3px;letter-spacing:.02em}
+  .aff-links a{font-size:10px;padding:6px 3px;letter-spacing:.02em;min-width:0;white-space:normal;overflow-wrap:anywhere;line-height:1.35}
   .aff-cap{font-size:10px;letter-spacing:.08em}
   .score{font-size:11px}
 }
 
 /* ---------- Movie cards: one-sheet posters under a spotlight ---------- */
-.card{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;text-align:left;padding:0;color:inherit;box-shadow:0 10px 28px rgba(0,0,0,.5);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.card{min-width:0;background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;text-align:left;padding:0;color:inherit;box-shadow:0 10px 28px rgba(0,0,0,.5);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
 .card:hover{transform:translateY(-5px);border-color:var(--doom-bright);box-shadow:0 22px 46px rgba(0,0,0,.7),0 0 26px rgba(63,169,124,.22)}
 .poster{aspect-ratio:2/3;position:relative;display:block;padding:0;overflow:hidden;background:#060D2B}
 .poster img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
@@ -246,7 +246,7 @@ section.row{padding:44px 0 10px}
 .card-body .meta-line{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--gold-bright);font-weight:600}
 .card-body p{margin:0;color:var(--muted);font-size:15px;line-height:1.5;flex:1}
 .card-foot{display:flex;gap:8px;margin-top:6px}
-.mini-btn{flex:1;border-radius:4px;padding:9px 8px;font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.09em;font-size:12.5px;font-weight:700;border:1px solid var(--line);background:#12224A;color:var(--cream)}
+.mini-btn{flex:1;min-width:0;white-space:normal;overflow-wrap:anywhere;border-radius:4px;padding:9px 8px;font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.09em;font-size:12.5px;font-weight:700;border:1px solid var(--line);background:#12224A;color:var(--cream)}
 .mini-btn:hover{border-color:var(--gold)}
 .mini-btn.add{background:none;color:var(--muted)}
 .mini-btn.add[aria-pressed="true"]{background:#14684A;border-color:#14684A;color:#fff}
@@ -306,7 +306,7 @@ section.row{padding:44px 0 10px}
 }
 
 /* ---------- Card titles, policy pages, footer links ---------- */
-.card-title{font-family:"Anton",Impact,sans-serif;text-transform:uppercase;font-size:21px;line-height:1.06;margin:0;color:#F4F7FD;font-weight:400}
+.card-title{font-family:"Anton",Impact,sans-serif;text-transform:uppercase;font-size:21px;line-height:1.06;margin:0;color:#F4F7FD;font-weight:400;overflow-wrap:anywhere}
 .pageview{display:none}
 .pageview.open{display:block}
 .page-card{background:linear-gradient(160deg,#0E1D42,#08122E);border:1px solid var(--doom-line);border-radius:var(--radius);padding:clamp(24px,4vw,42px);box-shadow:inset 0 0 60px rgba(20,104,74,.16)}
@@ -341,7 +341,7 @@ section.row{padding:44px 0 10px}
    3 across on phones. Each entry is a compact vertical card — poster on
    top with the rank number overlaid, title / meta / summary below, and
    the note badge as a slim footer strip — so four fit side by side. */
-.top10{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch}
+.top10{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:stretch}
 .top-thumb{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border:0;border-bottom:1px solid var(--gold-deep);border-radius:0;display:block}
 .top-row{position:relative;display:flex;flex-direction:column;min-width:0;overflow:hidden;background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);padding:0;text-align:left;color:inherit;width:100%}
 .top-row:hover{border-color:var(--doom-bright)}
@@ -360,7 +360,7 @@ section.row{padding:44px 0 10px}
   .top-row p{font-size:12.5px}
 }
 @media (max-width:700px){
-  .top10{grid-template-columns:repeat(3,1fr);gap:10px}
+  .top10{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .top-num{font-size:30px;-webkit-text-stroke-width:1.4px;top:5px;left:7px}
   .top-row>span:nth-child(3){padding:8px 9px 10px}
   .top-row h3{font-size:14.5px}
@@ -469,7 +469,7 @@ dialog{position:relative}
 .shop-intro b{color:var(--cream)}
 .shop-disc{font-size:13px;color:var(--dim);border:1px dashed var(--gold-deep);border-radius:8px;padding:10px 14px;margin:0 0 20px;max-width:78ch;line-height:1.55}
 .shop-count{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:12.5px;color:var(--gold-bright);margin:0 0 14px}
-.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.shop-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .shop-card{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(0,0,0,.5)}
 .shop-poster{position:relative;border:0;padding:0;background:#0A1430;cursor:pointer;width:100%}
 .shop-poster img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 22%;display:block}
@@ -499,8 +499,8 @@ dialog{position:relative}
 .retail-card h4 a{color:var(--cream);text-decoration:none}
 .retail-card h4 a:hover{color:var(--gold-bright);text-decoration:underline}
 .retail-card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.55}
-@media (max-width:1000px){.shop-grid{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:700px){.shop-grid{grid-template-columns:repeat(3,1fr);gap:10px}.shop-card{min-width:0}.shop-body{padding:9px 10px 11px;gap:6px}.shop-body h3{font-size:14.5px;line-height:1.2}.shop-meta{font-size:10px;letter-spacing:.05em}.shop-note{font-size:11.5px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}.fmt-badge,.cond-badge{font-size:9px;padding:2px 5px;letter-spacing:.05em}.shop-group{padding-top:7px}.shop-group-label{font-size:9.5px;letter-spacing:.06em;margin-bottom:5px}.shop-links{gap:4px}.shop-links a{font-size:10px;padding:5px 6px;letter-spacing:.02em}.retail-grid{grid-template-columns:repeat(3,1fr);gap:10px}.retail-card{padding:10px 11px;min-width:0}.retail-card h4{font-size:13.5px}.retail-card p{font-size:11px;line-height:1.45}}
+@media (max-width:1000px){.shop-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:700px){.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.shop-card{min-width:0}.shop-body{padding:9px 10px 11px;gap:6px}.shop-body h3{font-size:14.5px;line-height:1.2}.shop-meta{font-size:10px;letter-spacing:.05em}.shop-note{font-size:11.5px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}.fmt-badge,.cond-badge{font-size:9px;padding:2px 5px;letter-spacing:.05em}.shop-group{padding-top:7px}.shop-group-label{font-size:9.5px;letter-spacing:.06em;margin-bottom:5px}.shop-links{gap:4px}.shop-links a{font-size:10px;padding:5px 6px;letter-spacing:.02em}.retail-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.retail-card{padding:10px 11px;min-width:0}.retail-card h4{font-size:13.5px}.retail-card p{font-size:11px;line-height:1.45}}
 .stream-subhead{font-family:"Anton",Impact,sans-serif;text-transform:uppercase;font-size:clamp(22px,3vw,30px);color:var(--cream);margin:34px 0 6px}
 .stream-subhead em{font-style:normal;color:#86DDB2}
 .stream-subnote{color:var(--muted);margin:0 0 18px;max-width:72ch}
@@ -526,12 +526,12 @@ dialog{position:relative}
 /* ---------- Affiliate buy/rent links ---------- */
 .aff-box{margin-top:10px;border-top:1px dashed var(--line);padding-top:9px}
 .aff-cap{display:block;font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:700;color:var(--gold-bright);margin-bottom:7px}
-.aff-links{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.aff-links a{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;font-weight:700;padding:7px 6px;border-radius:4px;border:1px solid var(--line);background:#0A1B4D;color:#D7E0F0}
+.aff-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.aff-links a{display:inline-flex;align-items:center;justify-content:center;min-width:0;white-space:normal;overflow-wrap:anywhere;text-align:center;text-decoration:none;font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;font-weight:700;padding:7px 6px;border-radius:4px;border:1px solid var(--line);background:#0A1B4D;color:#D7E0F0}
 .aff-links a:hover{border-color:var(--gold);color:#fff}
 .aff-note{font-size:12px;color:var(--dim);line-height:1.5;margin:8px 0 0}
-.dlg-aff .aff-links{grid-template-columns:repeat(4,1fr)}
-@media (max-width:700px){.dlg-aff .aff-links{grid-template-columns:1fr 1fr}}
+.dlg-aff .aff-links{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:700px){.dlg-aff .aff-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* ---------- Your movies: watched, rating & review controls (in the movie popup) ---------- */
 .dlg-personal{margin-top:18px;border-top:1px solid var(--line-soft);padding-top:16px}
@@ -554,7 +554,7 @@ dialog{position:relative}
 }
 
 /* ---------- Finish: interaction polish & rendering quality ---------- */
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{overflow-x:clip;-webkit-tap-highlight-color:rgba(217,172,69,.25)}
 ::selection{background:#14684A;color:#fff}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #E9EEF8;outline-offset:2px}
@@ -588,6 +588,7 @@ dialog{max-height:calc(100dvh - 24px);overflow-y:auto}
   <div class="topbar-in">
     <nav class="mainnav" aria-label="Sections">
       <button type="button" data-nav="all" aria-pressed="true">Home</button>
+      <button type="button" data-nav="news" aria-pressed="false"><span>Latest</span><span>News</span></button>
       <button type="button" data-nav="now" aria-pressed="false"><span>Now</span><span>Showing</span></button>
       <button type="button" data-nav="upcoming" aria-pressed="false">Upcoming</button>
       <button type="button" data-nav="soon" aria-pressed="false"><span>Coming</span><span>Soon ’27</span></button>
@@ -680,52 +681,52 @@ dialog{max-height:calc(100dvh - 24px);overflow-y:auto}
 
 <!-- ============ LATEST MOVIE NEWS ============ -->
 <div class="wrap">
-  <section class="row" id="latest-movie-news" data-homeblock style="padding-top:30px">
+  <section class="row" id="latest-movie-news" data-section="news" data-homeblock style="padding-top:30px">
     <div class="row-head">
       <h2>Latest <em>Movie News</em></h2>
       <p>The biggest movie stories right now &mdash; box office, trailers, and what&rsquo;s opening next. Tap any headline to read the full story on the original publisher&rsquo;s site.</p>
-      <span class="row-tag">Updated Nov 12, 2026</span>
+      <span class="row-tag">Updated Nov 13, 2026</span>
     </div>
     <div class="news-list">
       <article class="news-item">
-        <span class="news-meta">Nov 8, 2026 &middot; TheWrap</span>
-        <h3><a href="https://www.thewrap.com/creative-content/movies/godzilla-minus-zero-box-office-opening-weekend-gkids-record/" target="_blank" rel="noopener noreferrer">Godzilla Minus Zero Sets Box Office Record With $31 Million Opening</a></h3>
-        <p>Toho&rsquo;s sequel is the No. 1 movie in America, nearly triple the opening of <em>Godzilla Minus One</em> &mdash; and the biggest opening ever for a live-action foreign-language film in North America.</p>
+        <span class="news-meta">Nov 12, 2026 &middot; MovieWeb</span>
+        <h3><a href="https://movieweb.com/the-cat-in-the-hat-box-office/" target="_blank" rel="noopener noreferrer">New Adventure Movie Officially Takes Over No. 1 Spot From Critically Hailed Sci-Fi Action Blockbuster</a></h3>
+        <p><em>The Cat in the Hat</em> claimed its first No. 1 day at the domestic box office, taking $3.45M on Wednesday, Nov 11 &mdash; Veterans Day &mdash; to edge <em>Godzilla Minus Zero</em>&rsquo;s $3.11M, though Godzilla still stands at $39.1M in six days.</p>
       </article>
       <article class="news-item">
-        <span class="news-meta">Nov 12, 2026 &middot; Comic Basics</span>
-        <h3><a href="https://www.comicbasics.com/marvels-new-avengers-doomsday-countdown-promo-reveals-the-mcu-homework-fans-cant-skip/" target="_blank" rel="noopener noreferrer">Marvel&rsquo;s New Avengers: Doomsday Countdown Promo Reveals the MCU Homework Fans Can&rsquo;t Skip</a></h3>
-        <p>Marvel&rsquo;s new &ldquo;Countdown to Avengers: Doomsday&rdquo; trailer lays out the 11 MCU films and shows to revisit before Dec 18 &mdash; and points to <em>Avengers: Endgame: Encore</em> streaming Nov 13 on Disney+.</p>
+        <span class="news-meta">Nov 13, 2026 &middot; Koimoi</span>
+        <h3><a href="https://www.koimoi.com/box-office/godzilla-minus-zero-north-america-box-office-less-than-2m-away-from-beating-avengers-endgame-encore/" target="_blank" rel="noopener noreferrer">Godzilla Minus Zero North America Box Office: Less Than $2M Away From Beating Avengers: Endgame Encore!</a></h3>
+        <p>At $39.1M domestic, <em>Godzilla Minus Zero</em> is under $2M away from passing <em>Avengers: Endgame Encore</em>&rsquo;s $40.1M &mdash; and closing on $100M worldwide before its second weekend.</p>
       </article>
       <article class="news-item">
-        <span class="news-meta">Nov 11, 2026 &middot; Bam Smack Pow</span>
-        <h3><a href="https://bamsmackpow.com/marvel-new-avengers-doomsday-trailer-release-date-update-visionquest-finale" target="_blank" rel="noopener noreferrer">New Avengers: Doomsday Trailer Gets Potential Release Update After VisionQuest Finale</a></h3>
-        <p>The third <em>Avengers: Doomsday</em> trailer is expected within the next week, with Thursday, Nov 12 and Monday, Nov 16 both tipped as possible drop dates.</p>
+        <span class="news-meta">Nov 11, 2026 &middot; CBR</span>
+        <h3><a href="https://www.cbr.com/avengers-endgame-encore-disney-plus-streaming-release-date/" target="_blank" rel="noopener noreferrer">Avengers: Endgame Encore Officially Sets Disney+ Streaming Release Date 1 Month Before Doomsday</a></h3>
+        <p>The <em>Encore</em> cut &mdash; about four minutes of new footage bridging to <em>Doomsday</em> &mdash; streams on Disney+ today, Friday, Nov 13, a month before <em>Doomsday</em> opens in theatres Dec 18.</p>
       </article>
       <article class="news-item">
-        <span class="news-meta">Nov 6, 2026 &middot; Ster-Kinekor</span>
-        <h3><a href="https://www.sterkinekor.com/article/the-hunger-games-sunrise-on-the-reaping-the-dark-story-behind-one-of-panems-most-important-games" target="_blank" rel="noopener noreferrer">The Hunger Games: Sunrise on the Reaping &mdash; The Quarter Quell Arrives in IMAX</a></h3>
-        <p>The prequel tells young Haymitch Abernathy&rsquo;s story in the 50th Hunger Games &mdash; the Second Quarter Quell, with twice as many tributes &mdash; and opens Nov 20, with the final trailer now out.</p>
+        <span class="news-meta">Nov 12, 2026 &middot; CBR</span>
+        <h3><a href="https://www.cbr.com/ebenezer-rotten-tomatoes-score/" target="_blank" rel="noopener noreferrer">Johnny Depp&rsquo;s New Dark Fantasy Film Is Already Very Polarizing</a></h3>
+        <p><em>Ebenezer</em> opens today, Nov 13, with critics split right down the middle at 50% on Rotten Tomatoes &mdash; and tracking pointing to a $20&ndash;25M opening weekend for Depp&rsquo;s first major studio film in eight years.</p>
       </article>
       <article class="news-item">
-        <span class="news-meta">Nov 12, 2026 &middot; TheWrap</span>
-        <h3><a href="https://www.thewrap.com/creative-content/reviews/ebenezer-review-johnny-depp/" target="_blank" rel="noopener noreferrer">Ebenezer Review: Johnny Depp&rsquo;s Christmas Carol Is Stale</a></h3>
-        <p>Johnny Depp returns to a big Hollywood studio film as Scrooge in Ti West&rsquo;s dark take on <em>A Christmas Carol</em> &mdash; but the first reviews are split on whether the comeback lands. It opens Nov 13.</p>
+        <span class="news-meta">Nov 11, 2026 &middot; The Direct</span>
+        <h3><a href="https://thedirect.com/article/marvel-studios-countdown-to-avengers-doomsday-trailer-essential-mcu-movie" target="_blank" rel="noopener noreferrer">Marvel Studios Releases &lsquo;Countdown To Avengers: Doomsday&rsquo; Trailer Which Features Every Essential MCU Movie</a></h3>
+        <p>Marvel&rsquo;s new <em>Countdown to Doomsday</em> trailer runs through the 11 MCU films and shows to revisit before Dec 18 &mdash; and points to <em>Avengers: Endgame: Encore</em> streaming today on Disney+.</p>
       </article>
       <article class="news-item">
-        <span class="news-meta">Nov 10, 2026 &middot; The Hollywood Reporter India</span>
-        <h3><a href="https://www.hollywoodreporterindia.com/features/insight/ramayana-becomes-first-indian-film-to-top-uk-ireland-weekend-box-office-beats-godzilla-minus-zero" target="_blank" rel="noopener noreferrer">Ramayana: Part 1 Becomes First Indian Film to Top UK-Ireland Box-Office Charts</a></h3>
-        <p>Nitesh Tiwari&rsquo;s mythological epic was the world&rsquo;s second-highest-grossing film of the weekend, with $52.15 million worldwide &mdash; and the biggest opening weekend ever for an Indian film in the UK and Ireland.</p>
+        <span class="news-meta">Nov 12, 2026 &middot; CBR</span>
+        <h3><a href="https://www.cbr.com/children-of-blood-and-bone-movie-trailer/" target="_blank" rel="noopener noreferrer">Children of Blood and Bone Trailer Unveils Paramount&rsquo;s Epic Fantasy Based on 8-Year-Old Book</a></h3>
+        <p>Paramount dropped a new trailer for the fantasy epic starring Thuso Mbedu, Damson Idris and Viola Davis &mdash; with a first taste of Tems&rsquo; new song from the soundtrack &mdash; ahead of its January arrival in theaters and IMAX.</p>
       </article>
       <article class="news-item">
-        <span class="news-meta">Nov 12, 2026 &middot; The Futon Critic / Netflix</span>
-        <h3><a href="http://www.thefutoncritic.com/video/2026/11/12/video-ray-gunn-official-trailer-number-2-netflix-102310/20261112netflix03/" target="_blank" rel="noopener noreferrer">Ray Gunn &mdash; Official Trailer #2</a></h3>
-        <p>Brad Bird&rsquo;s animated sci-fi noir, starring Sam Rockwell and Scarlett Johansson, gets a second trailer ahead of its Dec 4 theatrical bow and Dec 18 Netflix debut.</p>
+        <span class="news-meta">Nov 11, 2026 &middot; MikeShouts</span>
+        <h3><a href="https://mikeshouts.com/dune-part-three-final-trailer/" target="_blank" rel="noopener noreferrer">Dune: Part Three Final Trailer Shows the Dark Side of Paul Atreides&rsquo; Empire</a></h3>
+        <p>Warner Bros. released the final trailer for Denis Villeneuve&rsquo;s finale, set nearly two decades after <em>Part Two</em> &mdash; it opens Dec 18, the same day as <em>Avengers: Doomsday</em>.</p>
       </article>
       <article class="news-item">
-        <span class="news-meta">Nov 12, 2026 &middot; That Grape Juice</span>
-        <h3><a href="https://thatgrapejuice.net/entertainment/2026/11/extended-movie-trailer-children-of-blood-and-bone-starring-viola-davis-damson-idris/" target="_blank" rel="noopener noreferrer">Extended Trailer: Children of Blood and Bone</a></h3>
-        <p>Paramount&rsquo;s fantasy epic starring Thuso Mbedu, Damson Idris and Viola Davis gets an extended new trailer &mdash; with a first taste of Tems&rsquo; new song from the soundtrack &mdash; ahead of its January arrival in theaters and IMAX.</p>
+        <span class="news-meta">Nov 7, 2026 &middot; Fiction Horizon</span>
+        <h3><a href="https://fictionhorizon.com/panem-is-back-the-hunger-games-sunrise-on-the-reaping-presales-leave-wicked-and-michael-in-the-dust/" target="_blank" rel="noopener noreferrer">Panem Is Back: &lsquo;The Hunger Games: Sunrise on the Reaping&rsquo; Presales Leave &lsquo;Wicked&rsquo; and &lsquo;Michael&rsquo; in the Dust</a></h3>
+        <p>Presales are running ahead of <em>Wicked</em>&rsquo;s, with Deadline putting the opening floor at $80M+ &mdash; the best Lionsgate presales since COVID &mdash; ahead of the Nov 20 opening.</p>
       </article>
     </div>
     <p class="news-note">Headlines and summaries by Blockbuster Zone. Full stories live on the original publishers&rsquo; sites &mdash; tap a headline to read the whole article there.</p>
@@ -754,7 +755,7 @@ dialog{max-height:calc(100dvh - 24px);overflow-y:auto}
   <section class="row" data-homeblock id="calendarSection">
     <div class="row-head">
       <h2>Release <em>Calendar</em></h2>
-      <p>Every date that matters between now and the end of 2027, in order. U.S. theatrical dates — studios do move them, so this is the plan as of November 12, 2026.</p>
+      <p>Every date that matters between now and the end of 2027, in order. U.S. theatrical dates — studios do move them, so this is the plan as of November 13, 2026.</p>
     </div>
     <table class="calendar">
       <thead><tr><th scope="col">Date</th><th scope="col">Movie</th><th scope="col">Studio / Notes</th></tr></thead>
@@ -790,7 +791,7 @@ dialog{max-height:calc(100dvh - 24px);overflow-y:auto}
       <p>Blockbuster Zone is owned and operated by <strong>Sean O'Friel</strong>. It is a movie hub in the same spirit as a streaming home page: what's playing right now, what's coming up next, and the films from the last ten years that are actually worth your time. No endless scroll of filler — just the releases, the dates, and the box office, kept straight.</p>
       <p>Right now the story of the season is December 18, 2026: Marvel's <em>Avengers: Doomsday</em> and Denis Villeneuve's <em>Dune: Part Three</em> opening on the very same day. Pick a side — or do the double feature.</p>
       <p>Staying in instead? Our <strong>Stream Free</strong> section rounds up the best legal places to watch movies for free — Tubi, Pluto TV, The Roku Channel, Fandango at Home, and more — no subscription required. <button type="button" class="foot-link" data-nav="freestream" style="font-size:14px;padding-left:2px">Browse Stream Free →</button></p>
-      <p class="sources">Release dates and box-office figures checked November 12, 2026, from
+      <p class="sources">Release dates and box-office figures checked November 13, 2026, from
         <a href="https://ew.com/2026-movie-release-premiere-dates-11877222" target="_blank" rel="noopener noreferrer">Entertainment Weekly's 2026 release guide</a>,
         <a href="https://editorial.rottentomatoes.com/article/2026-holiday-movie-preview/" target="_blank" rel="noopener noreferrer">Rotten Tomatoes' holiday preview</a>,
         <a href="https://www.metacritic.com/news/upcoming-movie-release-dates-schedule/" target="_blank" rel="noopener noreferrer">Metacritic's release calendar</a>, and
@@ -1066,7 +1067,7 @@ function P(id){ return POSTERS[id] || ""; }
 <script>
 var MOVIES = [
 /* ---------- NOW SHOWING ---------- */
-{id:"godzilla-minus-zero",sec:"now",title:"Godzilla Minus Zero",genre:"Sci-Fi · Action",date:"Nov 6, 2026",dateShort:"In Theaters",studio:"Toho / GKIDS",director:"",cast:"",desc:"The follow-up to the Oscar-winning Godzilla Minus One is still No. 1 — it took $3.3M on Tuesday alone, up 57% from Monday, for $36M in North America in just five days. It is on pace to pass Minus One's entire $57.1M domestic run next week.",extra:"Weekend Nov 6–8: $30.6M · Tue Nov 10: $3.3M · $36.0M domestic total in 5 days",v:6},
+{id:"godzilla-minus-zero",sec:"now",title:"Godzilla Minus Zero",genre:"Sci-Fi · Action",date:"Nov 6, 2026",dateShort:"In Theaters",studio:"Toho / GKIDS",director:"",cast:"",desc:"Still No. 1 after six days — $39.1M in North America, and less than $2M away from passing Avengers: Endgame Encore's $40.1M. The Cat in the Hat did steal Wednesday, Nov 11, with $3.45M on Veterans Day, but Godzilla is all but certain to pass Minus One's entire $57.1M domestic run in its second weekend.",extra:"Weekend Nov 6–8: $30.6M · Wed Nov 11: $3.1M · $39.1M domestic total in 6 days",v:6},
 {id:"cat-in-the-hat",sec:"now",title:"The Cat in the Hat",genre:"Animation · Family",date:"Nov 6, 2026",dateShort:"In Theaters",studio:"Warner Bros.",director:"—",cast:"",desc:"Dr. Seuss's most famous troublemaker returned in a new animated feature — No. 2 with $20.0M in its opening weekend.",extra:"Weekend Nov 6–8: $20.0M · $20.0M domestic total",v:3},
 {id:"you-can-see-everything",sec:"now",title:"You Can See Everything",genre:"Documentary",date:"Oct 16, 2026",dateShort:"In Theaters",studio:"A24",director:"Nathan Fielder & Lance Oppenheim",cast:"Elizabeth Holmes (subject)",desc:"The Elizabeth Holmes documentary that topped the chart in its third weekend — a rare feat for a doc in wide release — and is closing in on $80M domestic.",extra:"Weekend Nov 6–8: $8.4M · $79.4M domestic total",v:1},
 {id:"wildwood",sec:"now",title:"Wildwood",genre:"Animation",date:"Oct 23, 2026",dateShort:"In Theaters",studio:"LAIKA",director:"",cast:"",desc:"LAIKA's stop-motion fantasy fell just 20% in its third weekend and has already passed the studio's earlier film, Missing Link, at the domestic box office.",extra:"Weekend Nov 6–8: $7.2M · $40.1M domestic total",v:5},
@@ -1077,14 +1078,14 @@ var MOVIES = [
 {id:"resident-evil",sec:"now",title:"Resident Evil",genre:"Horror",date:"Sep 18, 2026",dateShort:"In Theaters",studio:"Sony / Columbia",director:"Zach Cregger",cast:"",desc:"Zach Cregger's reboot of the horror franchise is still drawing crowds eight weeks into its run.",extra:"Weekend Nov 6–8: $1.3M · $159.7M total gross",v:6},
 {id:"spider-man-brand-new-day",sec:"now",title:"Spider-Man: Brand New Day",genre:"Superhero",date:"Jul 31, 2026",dateShort:"In Theaters",studio:"Sony / Marvel",director:"",cast:"",desc:"The summer's superhero giant — still on screens months after opening, and closing in on a billion dollars.",extra:"$959.0M total gross",v:2},
 /* ---------- UPCOMING 2026 ---------- */
-{id:"hunger-games-sunrise",sec:"upcoming",title:"The Hunger Games: Sunrise on the Reaping",genre:"Action · Adventure",date:"Nov 20, 2026",dateShort:"Nov 20",studio:"Lionsgate",director:"Francis Lawrence (franchise)",cast:"",desc:"The LA premiere is done, early reactions are in, and the final trailer is out: 24 years before Katniss, the 50th Hunger Games — the Second Quarter Quell — sends twice the tributes into the arena. Joseph Zada stars as a young Haymitch Abernathy.",extra:"Opens Friday, November 20, 2026 · Final trailer out now",v:2},
+{id:"hunger-games-sunrise",sec:"upcoming",title:"The Hunger Games: Sunrise on the Reaping",genre:"Action · Adventure",date:"Nov 20, 2026",dateShort:"Nov 20",studio:"Lionsgate",director:"Francis Lawrence (franchise)",cast:"",desc:"Presales are running ahead of Wicked's, with Deadline putting the opening floor at $80M+ — the best Lionsgate presales since COVID. 24 years before Katniss, the 50th Hunger Games — the Second Quarter Quell — sends twice the tributes into the arena. Joseph Zada stars as a young Haymitch Abernathy.",extra:"Opens Friday, November 20, 2026 · Presales ahead of Wicked · $80M+ opening floor",v:2},
 {id:"i-play-rocky",sec:"upcoming",title:"I Play Rocky",genre:"Drama",date:"Nov 20, 2026",dateShort:"Nov 20",studio:"Amazon MGM",director:"Peter Farrelly",cast:"",desc:"The true story of how Sylvester Stallone fought to play Rocky himself. Limited November 6, wide November 20 — with the original Rocky back in theaters the same month for its 50th anniversary.",extra:"Limited Nov 6: $337K in 7 theaters · Wide Nov 20, 2026",v:4},
 {id:"hexed",sec:"upcoming",title:"Hexed",genre:"Animation · Family",date:"Nov 25, 2026",dateShort:"Nov 25",studio:"Disney",director:"",cast:"",desc:"Disney's original animated feature for Thanksgiving weekend — a mother-son story with a magical twist.",extra:"Opens Wednesday, November 25, 2026",v:1},
 {id:"focker-in-law",sec:"upcoming",title:"Focker In-Law",genre:"Comedy",date:"Nov 25, 2026",dateShort:"Nov 25",studio:"Universal",director:"—",cast:"",desc:"The Focker family returns for Thanksgiving weekend in the next chapter of the Meet the Parents comedy series.",extra:"Opens Wednesday, November 25, 2026",v:3},
 {id:"violent-night-2",sec:"upcoming",title:"Violent Night 2",genre:"Action · Comedy",date:"Dec 4, 2026",dateShort:"Dec 4",studio:"Universal",director:"—",cast:"David Harbour",desc:"Santa is back on the naughty list. The sequel to the surprise holiday action hit opens the first weekend of December.",extra:"Opens Friday, December 4, 2026",v:6},
 {id:"behemoth",sec:"upcoming",title:"Behemoth!",genre:"Drama · Music",date:"Dec 4, 2026",dateShort:"Dec 4",studio:"Searchlight Pictures",director:"Tony Gilroy",cast:"Pedro Pascal",desc:"Tony Gilroy's music-world drama, one of the early-December awards-season plays from Searchlight.",extra:"Opens Friday, December 4, 2026",v:5},
 {id:"the-odyssey",sec:"upcoming",title:"The Odyssey",genre:"Epic",date:"Dec 11, 2026",dateShort:"Dec 11",studio:"Universal",director:"Christopher Nolan",cast:"Matt Damon · Tom Holland · Anne Hathaway",desc:"Nolan's epic closed its first run as Universal's highest-grossing film ever — $1.80B worldwide — and returns to 1,000+ screens, IMAX 70mm included, on December 11.",extra:"Returns Friday, December 11, 2026 · $1.80B worldwide (reported)",v:4},
-{id:"avengers-doomsday",sec:"upcoming",title:"Avengers: Doomsday",genre:"Superhero · Sci-Fi",date:"Dec 18, 2026",dateShort:"Dec 18",studio:"Marvel Studios / Disney",director:"Anthony & Joe Russo",cast:"Robert Downey Jr. as Doctor Doom · Pedro Pascal · Vanessa Kirby",desc:"Robert Downey Jr. returns to Marvel — as the villain. Marvel's new visual dictionary confirms three universes on a collision course and five teams uniting against Doctor Doom. A “Countdown to Doomsday” trailer is out now with an 11-title watchlist, Avengers Endgame: Encore streams on Disney+ Friday, and a third full trailer is expected any day — insiders point to today or Monday. The Russo brothers direct the biggest opening of the year — 165 minutes, in theaters December 18.",extra:"Opens Friday, December 18, 2026 · Infinity Vision screens · Countdown trailer out now",v:2},
+{id:"avengers-doomsday",sec:"upcoming",title:"Avengers: Doomsday",genre:"Superhero · Sci-Fi",date:"Dec 18, 2026",dateShort:"Dec 18",studio:"Marvel Studios / Disney",director:"Anthony & Joe Russo",cast:"Robert Downey Jr. as Doctor Doom · Pedro Pascal · Vanessa Kirby",desc:"Robert Downey Jr. returns to Marvel — as the villain. Marvel's new visual dictionary confirms three universes on a collision course and five teams uniting against Doctor Doom. A “Countdown to Doomsday” trailer is out now with an 11-title watchlist, Avengers Endgame: Encore streams on Disney+ today, Friday, November 13, and a third full trailer is expected any day — insiders point to Monday, November 16. The Russo brothers direct the biggest opening of the year — 165 minutes, in theaters December 18.",extra:"Opens Friday, December 18, 2026 · Infinity Vision screens · Endgame: Encore on Disney+ today",v:2},
 {id:"dune-part-three",sec:"upcoming",title:"Dune: Part Three",genre:"Sci-Fi · Epic",date:"Dec 18, 2026",dateShort:"Dec 18",studio:"Warner Bros.",director:"Denis Villeneuve",cast:"Timothée Chalamet · Zendaya",desc:"The final trailer is out — Denis Villeneuve completes his Dune trilogy, adapting Dune Messiah, opening the same day as Avengers: Doomsday, with IMAX screens locked in for three weeks. Fans call it “Dunesday.”",extra:"Opens Friday, December 18, 2026 · Also in IMAX",v:1},
 {id:"angry-birds-3",sec:"upcoming",title:"The Angry Birds Movie 3",genre:"Animation · Family",date:"Dec 23, 2026",dateShort:"Dec 23",studio:"Rovio / Sega",director:"—",cast:"",desc:"The flock flies back to theaters two days before Christmas for the holiday family crowd.",extra:"Opens Wednesday, December 23, 2026",v:3},
 {id:"jumanji-open-world",sec:"upcoming",title:"Jumanji: Open World",genre:"Adventure · Comedy",date:"Dec 25, 2026",dateShort:"Dec 25",studio:"Sony",director:"Jake Kasdan (franchise)",cast:"Dwayne Johnson · Jack Black · Kevin Hart · Karen Gillan",desc:"This time the game escapes into the real world. The Johnson–Hart–Black–Gillan team returns on Christmas Day.",extra:"Opens Friday, December 25, 2026",v:4},
@@ -1125,8 +1126,8 @@ var TOP10ALLTIME = [
 ];
 
 var SECTIONS = [
-{key:"now",heading:"Now <em>Showing</em>",tag:"In theaters now",blurb:"What is actually on screens this week. Godzilla Minus Zero is still No. 1 — $36M in five days — and Johnny Depp’s Ebenezer opens tomorrow, Friday, November 13."},
-{key:"upcoming",heading:"Upcoming <em>Hollywood Movies</em>",tag:"Nov – Dec 2026",blurb:"The rest of 2026, date by date — from Ebenezer tomorrow to the Hunger Games and the Dunesday double-header on December 18."},
+{key:"now",heading:"Now <em>Showing</em>",tag:"In theaters now",blurb:"What is actually on screens this week. Godzilla Minus Zero is still No. 1 — $39.1M in six days — and Johnny Depp’s Ebenezer opens today, Friday, November 13."},
+{key:"upcoming",heading:"Upcoming <em>Hollywood Movies</em>",tag:"Nov – Dec 2026",blurb:"The rest of 2026, date by date — from Ebenezer today to the Hunger Games and the Dunesday double-header on December 18."},
 {key:"soon",heading:"Coming Soon <em>2027</em>",tag:"Next year",blurb:"The big dates already locked in for 2027: Spider-Verse, Superman, Batman, Gollum, and Secret Wars."}
 ];
 
